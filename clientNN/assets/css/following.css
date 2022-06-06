@@ -1,0 +1,30 @@
+.header{
+  margin-top: 50px;
+}
+
+#amountFollowing{
+  font-size: 1rem;
+  position: relative;
+  bottom: 12px;
+}
+
+@media (max-width: 396px) { /*for sm mobile */
+  #amountFollowing{
+    font-size: .8rem;
+  }
+}
+
+.not-connected-text{
+  margin-top: 200px;
+  margin-bottom: 450px;
+  padding: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.sub-title{
+  margin-bottom: 10px;
+  position: relative;
+  top: -5px;
+}

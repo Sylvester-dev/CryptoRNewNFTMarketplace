@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style_home.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="assets/css/card.css">
+   
+    <link rel="icon" type="image/png" href="assets/images-icons/CryptoRLogo.png">
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis@0.0.184/dist/moralis.js"></script>
+    <script src="https://kit.fontawesome.com/99c803f139.js" crossorigin="anonymous"></script>
+    <script src="assets/js/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <title>CryptoR - Create, buy, and sell digital artwork backed by Avalanche blockchain technology</title>
+  </head>
+  <body>
+    <div class="main">
+    <header id="header">
+      <nav
+        data-aos="zoom-out"
+        data-aos-delay="800"
+        class="navbar navbar-expand"
+      >
+        <div class="container header">
+          <a class="navbar-brand" href="index.html">
+            <img
+              class="navbar-brand-sticky"
+              src="assets/images-icons/CryptoRLogo.png"
+              alt="CryptoR logo"
+            />
+          </a>
+          <div class="ml-auto"></div>
+          <!-- Navbar -->
+
+          <ul class="navbar-nav items mx-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="following.html" class="nav-link">Following</a>
+            </li>
+            <li class="nav-item">
+              <a href="academy.html" class="nav-link">Academy</a>
+            </li>
+            <li class="nav-item">
+              <a href="create.html" id="create" class="nav-link">Create</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#"
+                >Explore <i class="fas fa-angle-down ml-1"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a href="stats.html" class="nav-link">My stats</a>
+                </li>
+                <li class="nav-item" id="myProfile">
+                  <a href="profile.html" class="nav-link">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a href="edit-profile.html" class="nav-link"
+                    >Edit Profile</a
+                  >
+                </li>
+                <li class="nav-item" id="disconnectWalletBtn">
+                  <a class="nav-link">Disconnect wallet</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">Contact</a>
+            </li>
+            <!-- Navbar Action Button -->
+            <ul class="navbar-nav action">
+              <li class="nav-item ml-3" id="connectWalletTag">
+                <button
+                  type="button"
+                  href="wallet-connect.html"
+                  class="btn ml-lg-auto btn-bordered-white"
+                  id="connectWalletBtn"
+                >
+                  <i class="icon-wallet mr-md-2"></i>Wallet Connect
+                </button>
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+          <!-- ***** Breadcrumb Area Start ***** -->
+          <section class="breadcrumb-area overlay-dark d-flex align-items-center">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <!-- Breamcrumb Content -->
+                  <div class="breadcrumb-content text-center">
+                    <h2 class="m-0">Profile</h2>
+                    <ol class="breadcrumb d-flex justify-content-center">
+                      <li class="breadcrumb-item"><a href="index.html">Explore</a></li>
+                      <li class="breadcrumb-item active">Profile</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- ***** Breadcrumb Area End ***** -->
+
+    <div class="container-fluid col-11">
+      <div class="profile profileGenerated">
+        <div class="modals"></div>
+
+        <div class="profile-top-half">
+          <div class="profile-picture">
+            <span id="spinnerGrowProfilePhoto" class="spinner-grow text-light" style="width: 120px; height: 120px;" role="status">
+              <span class="sr-only">Loading...</span>
+            </span>
+            <img class="profile-photo shadow-sm" src="../client/assets/images-icons/default.png" width="120" alt="profile photo">
+            <div class="seller-badge">
+              <img id="sellerRank" src="" width="32" alt="seller rank badge">
+            </div>
+          </div>
+
+          <div class="name">
+            <span id="username"></span>
+          </div>
+
+          <div class="eth-address">
+            <span id="truncatedEthAddress"></span>
+            <span id="copySpan"></span>
+          </div>
+
+          <div id="bio"></div>
+
+          <div class="social-media-tags"> <!-- if added in settings -->
+            <a id="twitter" class="social-tag" target="_blank" href=""><img src="assets/images-icons/twitterIcon.png" width="15"> <span id='twitterHandle'></span></a>
+            <a id="instagram" class="social-tag" target="_blank" href=""><img src="assets/images-icons/instagramIcon.png" width="15"> <span id='instagramHandle'></span></a>
+          </div>
+
+          <div class="follow-share d-inline-flex">
+            <button type="button" class="btn btn-light shadow-sm button-styling mr-2" id="followButton">Follow</button>
+            <button type="button" class="btn btn-success mr-2 shadow-sm button-styling" id="withdraw">Withdraw<span id="amountToWithdraw"></span></button>
+
+            <!-- <div class="dropdown">
+              <button type="button" class="btn btn-light shadow-sm button-styling" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Share
+              </button>
+              <div class="dropdown-menu">
+                <p id="dropdownMenuTitle">Share this page</p>
+                <a class="dropdown-item" target="popup" id="twitterShare">Tweet</a>
+                <a class="dropdown-item" target="popup" id="facebookShare">Facebook</a>
+                <a class="dropdown-item" id="emailShare">Email</a>
+              </div>
+            </div> -->
+          </div>
+
+          <div class="tip">
+            <button type="button" class="btn btn-primary shadow-sm button-styling" id="tipButton">Send Tip</button>
+          </div>
+
+        </div>
+
+        <div class="profile-bottom-half">
+            <div class="sorting-row row">
+              <ul class="nav nav-pills" role="tablist">
+                <!-- <li class="nav-item" role="presentation">
+                  <a class="nav-link tab" data-toggle="pill" id="forSale">For Sale <span class="count-text" id='forSaleCount'></span></a>
+                </li> -->
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link tab active" data-toggle="pill" id="owns">Owns <span class="count-text" id='ownsCount'></span></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link tab" data-toggle="pill" id="minted">Minted <span class="count-text" id='mintedCount'></span></a>
+                </li>
+                <!-- <li class="nav-item" role="presentation">
+                  <a class="nav-link tab" data-toggle="pill" id="liked">Liked <span class="count-text" id='likedCount'></span></a>
+                </li> -->
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link tab" data-toggle="pill" id="encouraged">Encouraged <span class="count-text" id='encouragedCount'></span></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link tab" data-toggle="pill" id="following">Following <span class="count-text" id='followingCount'></span></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link tab" data-toggle="pill" id="followers">Followers <span class="count-text" id='followerCount'></span></a>
+                </li>
+              </ul>
+            </div>
+
+          <div class="wrapper cardDivs row">
+            <h1>oho!! buy some nft's</h1>
+          </div>
+
+        </div>
+
+        <div id="withdrawModal" class="modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id='withdrawTitle'>Withdraw Profits</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="withdrawModalBody">
+                <p id="withdrawText"></p>
+              </div>
+              <div class="modal-footer" id='withdrawFooter'>
+                 <span id="withdrawStatus"></span>
+                 <button type="button" class="btn btn-secondary button-styling" data-dismiss="modal">Close</button>
+                 <button type="button" class="btn btn-primary button-styling" id='confirmBtn'>Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tipModal" class="modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id='tipTitle'>Send Tip</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="tipModalBody">
+                <form>
+                  <div class="helper">
+                    <div class="input-group" id="tipInputGroup">
+                      <span class="input-title">Tip Amount</span>
+                      <input id="tipInput" required name="Amount to send" title="Tip cannot have more than 18 digits before or 15 digits after the decimal" type="text" class="form-control input-styling" placeholder="e.g. 1.69" aria-label="ether amount">
+                    </div>
+                    <span class='sub-text'>Enter amount in ETH that you want to send</span><br>
+                  </div>
+                  <div class="price-calculator price-info">
+                    <span>Tipping
+                      <span id="tipAmountInEth" class="sale-profit">0 ETH</span>
+                      <span id="tipAmountInUsd">($0.00)</span>
+                      <span id="tipToAddress"></span>
+                    </span>
+                  </div>
+                  <span class='sub-text' id="tipRegexMessage"></span>
+                </form>
+              </div>
+              <div class="modal-footer" id='tipFooter'>
+                 <span id="tipStatus"></span>
+                 <button type="button" class="btn btn-secondary button-styling" data-dismiss="modal">Close</button>
+                 <button type="button" class="btn btn-primary button-styling" disabled id='confirmTipBtn'>Send Tip</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="ifWalletNotConnectedModal" class="modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header center-content">
+                <h5 class="modal-title">Connect Wallet To Like/Encourage Artwork</h5>
+              </div>
+              <div class="modal-body center-content">
+                <button type="button" class="btn btn-secondary button-styling mr-2" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary button-styling" id="connectWalletModalBtn">Connect Wallet</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--====== Footer Area Start ======-->
+    <footer class="footer-area">
+      <!-- Footer Top -->
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-lg-3 res-margin">
+              <!-- Footer Items -->
+              <div class="footer-items">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                  <img src="assets/images-icons/CryptoRLogo.png" alt="" />
+                </a>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Quis non, fugit totam vel laboriosam vitae.
+                </p>
+                <!-- Social Icons -->
+                <div class="social-icons d-flex">
+                  <a class="facebook" href="#">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a class="twitter" href="#">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a class="google-plus" href="#">
+                    <i class="fab fa-google-plus-g"></i>
+                    <i class="fab fa-google-plus-g"></i>
+                  </a>
+                  <a class="vine" href="#">
+                    <i class="fab fa-vine"></i>
+                    <i class="fab fa-vine"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 res-margin">
+              <!-- Footer Items -->
+              <div class="footer-items">
+                <!-- Footer Title -->
+                <h4 class="footer-title">Useful Links</h4>
+                <ul>
+                  <li><a href="#">All NFTs</a></li>
+                  <li><a href="#">How It Works</a></li>
+                  <li><a href="#">Create</a></li>
+                  <li><a href="#">Explore</a></li>
+                  <li><a href="#">Privacy &amp; Terms</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 res-margin">
+              <!-- Footer Items -->
+              <div class="footer-items">
+                <!-- Footer Title -->
+                <h4 class="footer-title">Community</h4>
+                <ul>
+                  <li><a href="#">Help Center</a></li>
+                  <li><a href="#">Partners</a></li>
+                  <li><a href="#">Suggestions</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Newsletter</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <!-- Footer Items -->
+              <div class="footer-items">
+                <!-- Footer Title -->
+                <h4 class="footer-title">Subscribe Us</h4>
+                <!-- Subscribe Form -->
+                <div class="subscribe-form d-flex align-items-center">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="info@yourmail.com"
+                  />
+                  <button type="submit" class="btn">
+                    <i class="icon-paper-plane"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <!-- Copyright Area -->
+              <div
+                class="copyright-area d-flex flex-wrap justify-content-center justify-content-sm-between text-center py-4"
+              >
+                <!-- Copyright Left -->
+                <div class="copyright-left">
+                  &copy;2022 CryptoR All Rights Reserved
+                </div>
+                <!-- Copyright Right -->
+                <div class="copyright-right">
+                  Made with <i class="fas fa-heart"></i> By
+                  <a href="#">cryptoR</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    </div>
+     <!-- ***** All jQuery Plugins ***** -->
+
+    <!-- jQuery(necessary for all JavaScript plugins) -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap js -->
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+    <!-- Plugins js -->
+    <script src="assets/js/vendor/all.min.js"></script>
+    <script src="assets/js/vendor/slider.min.js"></script>
+    <script src="assets/js/vendor/countdown.min.js"></script>
+    <script src="assets/js/vendor/shuffle.min.js"></script>
+
+    <!-- Active js -->
+    <script src="assets/js/main.js"></script>
+  </body>
+  <script src="assets/js/js.cookie.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/profile.js"></script>
+  <script src="assets/js/abi.js"></script>
+  <script src="assets/js/connectWallet.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/profile.js"></script>
+
+</html>

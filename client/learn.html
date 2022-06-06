@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/learn.css">
+    <link rel="stylesheet" href="assets/css/basics.css">
+    <link rel="icon" type="image/png" href="assets/images-icons/CryptoRLogo.png">
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis@0.0.184/dist/moralis.js"></script>
+    <script src="https://kit.fontawesome.com/99c803f139.js" crossorigin="anonymous"></script>
+    <title>CryptoR - Create, buy, and sell digital artwork backed by Avalanche blockchain technology</title>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/images-icons/CryptoRLogoBeta.png" width="176" height="36" class="d-inline-block align-top" alt="CryptoR logo">
+
+      </a>
+      <span class="input-group searchbar">
+        <span id="exitSearchBtn">
+          <span class="exit-search">⬅️</span>
+        </span>
+        <input type="search" id="searchInput" class="form-control search-input" placeholder="Search by Creator, Artwork Title, or Wallet Address" aria-label="Search by creator, artwork title, or wallet address">
+      </span>
+      <button class="btn search-button" id="searchBtn">🔍</button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="following.html">Following</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="academy.html">Academy</a>
+           </li>
+          <li class="nav-item">
+            <a class="nav-link" id="create" href="create.html">CREATE</a>
+          </li>
+          <li class="nav-item mr-1" id="connectWalletTag">
+            <button type="button" class="btn btn-primary button-styling shadow-sm" id="connectWalletBtn">Connect</button>
+          </li>
+          <li class="nav-item dropdown mr-2" id="profileTag" style="display: none;">
+            <a class="nav-link dropdown-toggle shadow-sm" href="#" id="profile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id="userAddress"></span>
+              <span id="spinnerBorderInNav" class="spinner-border text-primary" style="margin: 0 5px; width: 1.25rem; height: 1.25rem;" role="status">
+                <span class="sr-only">Loading...</span>
+              </span>
+              <img src="" class="shadow-sm" id="profilePhotoInNav" width="30px">
+              <img id="rankInNav" src="" width="12px" alt="seller badge">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="profile">
+              <a class='dropdown-item' href="stats.html">My Stats</a>
+              <a id="myProfile" class='dropdown-item' href="profile.html">My Profile</a>
+              
+              <a class='dropdown-item' href="edit-profile.html">Make/Edit Profile</a>
+              <hr>
+              <a class="dropdown-item" id="disconnectWalletBtn">Disconnect Wallet</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-light theme" id="forDarkMode">
+              <img src="assets/images-icons/darkmode.png" width="30" height="30" alt="icon to initiate dark mode theme">
+            </button>
+            <button type="button" class="btn btn-dark theme" id="forLightMode">
+              <img src="assets/images-icons/lightmode.png" width="30" height="30" alt="icon to initiate light mode theme">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="faqs-page">
+        <header>
+          <img src="assets/images-icons/CryptoRLogo.png" width="100" height="100" alt="icon to initiate light mode theme">
+          Crypto<span id="mint">R</span>
+          <p class="subheader">FAQs</p>
+        </header>
+        <div class="accordion" id="FAQs">
+
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  What is an NFT?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#FAQs">
+              <div class="card-body">
+               NFTs are Non Fungible Tokens. These NFTs symbolize real world objects like a piece of music, art, videos, text, games or even software. 
+               Theoretically speaking, each and every thing on this Earth can be converted into an NFT. Any idea has potential to be transformed into an NFT. 
+               NFTs are mostly unique. They bear a verifiable unique identification code. Since NFTs are unique and therefore they cannot be traded for each other. 
+               This means that one NFT is not equal to the other NFT. 
+               If you have a ten rupee note you can exchange it with any other 10 rupee note. But if you have one NFT then you cannot exchange it with any other NFT. 
+               This way they are very unique. Though, NFTs are a variant of cryptocurrency but the big difference between the two is that NFTs cannot be traded in fractions like Bitcoin or Ethereum etc.
+          <a target="_blank" href="https://medium.com/geekculture/what-are-nfts-the-collectible-crypto-token-explained-ddd8a49e359b#:~:text=A%20non%2Dfungible%20token%20(NFT,versions%20of%20real%2Dworld%20assets.">here.</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  How do I create an NFT on CryptoR?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#FAQs">
+              <div class="card-body">
+                1) Click/tap <span id='createInQ2'>CREATE</span> in the navigation bar.<br><br>
+                2) Connect your MetaMask wallet if you haven't already done so. (see below if in need of assistance)<br><br>
+                3) Choose single 1-of-1, this is the ERC-721 token standard.<br><br>
+                4) Upload the artwork. (if larger than 64 MB see Unlockable Content below)<br><br>
+                5) Set a price if you want to sell the artwork. (this can always be changed later)<br><br>
+                6) Choose whether you want to have the buyer receive exclusive unlockable content on purchase.<br>
+                   Note: THIS CANNOT BE SET OR CHANGED LATER<br><br>
+                7) Choose your royalty percentage. This is the percentage of the sale price you will receive on every subsequent purchase of your artwork.<br><br>
+                8) Choose a title for your artwork. <br>
+                  Note: THIS CANNOT BE CHANGED LATER<br><br>
+                9) Choose a description for your artwork. (optional)<br>
+                  Note: THIS CANNOT BE CHANGED LATER<br><br>
+                10) Add any additional info regarding the artwork or any unlockable content. (optional)<br>
+                    Note: THIS CAN BE SET OR CHANGED BY THE OWNER<br><br>
+                11) Click the create button.<br><br>
+                12) If going on sale click the 'Set Approval To Sell' button and confirm in MetaMask (this only needs to be done once), then click 'Upload and Mint' and confirm in MetaMask.<br><br>
+                13) If the artwork is going on sale click 'Put On Sale' and then confirm in MetaMask.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Which wallets are able to be used on CryptoR?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#FAQs">
+              <div class="card-body">
+                At the current time, only <a target='_blank' href='https://metamask.io/'>MetaMask</a> is allowed to interact with CryptoR. Use of any others is ill-advised until further notice.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  What is unlockable content?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#FAQs">
+              <div class="card-body">
+                Unlockable content is any information you want the owner of the NFT you make to have exclusive access to.
+                This can be anything from a link to a high-res download to a password to a website to unlock a product. Your imagination is the limit.
+                Just keep in mind that this information can only be set when creating the NFT and cannot be changed later.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingSix">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  What is gas and why I have to pay a gas fee?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#FAQs">
+              <div class="card-body">
+                Gas should be considered as a measure of amount required to conduct specific operations on a blockchain. 
+                Blockchains require computational power to execute any transaction. A fee is needed to be paid towards utilization of blockchains resources. 
+                This fee is termed as gas fee. Gas fee on CryptoRNFT.Com is payable in AVAX token.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingSeven">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                  What is a royalty and service charge?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#FAQs">
+              <div class="card-body">
+                A royalty is a certain percentage of the sale price that is automatically held in an escrow contract when a sale is
+                successful and sits securely until withdrawn by the original creator. It is set during the creation process and cannot
+                be changed due to the nature of a blockchain. At CryptoR we have a minimum of 1% and a maximum of 20% able to be set.
+                Different marketplaces have different policies on charging commissions towards trade being conducted on their websites.
+                 Cryptornft.com charges 2% commission (excluding service tax) on the sale value of every NFT. 
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingEight">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                  I sold an artwork, but my wallet balance has not gone up.
+                </button>
+              </h2>
+            </div>
+            <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#FAQs">
+              <div class="card-body">
+                At CryptoR security is a top priority, which is why we have chosen to minimize any payment interceptions from hackers
+                and do not send payments directly to an artist's wallet. When you have received a payment for a sale, go to your profile (top-right in the navigation bar) and you will see
+                an available balance to withdraw under your bio. Secondary sale payments received (royalties) are also withdrawn the same way.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingNine">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                  Where is my artwork file stored?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#FAQs">
+              <div class="card-body">
+                At CryptoR your artwork files are securely stored and pinned on <a target="_blank" href="https://docs.ipfs.io/concepts/what-is-ipfs/">IPFS</a> through a gateway provided by Moralis.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingTen">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                  What do the check marks mean?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#FAQs">
+              <div class="card-body">
+                They are a ranking badge for how many sales you have made.<br>
+                1-4: <img src="./assets/images-icons/oneSale.png" height="15px" alt=""><br>
+                5-9: <img src="./assets/images-icons/fiveSales.png" height="15px" alt=""><br>
+                10-19: <img src="./assets/images-icons/tenSales.png" height="15px" alt=""><br>
+                20-34: <img src="./assets/images-icons/twentySales.png" height="15px" alt=""><br>
+                35-49: <img src="./assets/images-icons/thirtyfiveSales.png" height="15px" alt=""><br>
+                50-74: <img src="./assets/images-icons/fiftySales.png" height="15px" alt=""><br>
+                75-99: <img src="./assets/images-icons/seventyfiveSales.png" height="15px" alt=""><br>
+                100+: <img src="./assets/images-icons/hundredPlusSales.png" height="15px" alt=""><br>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingEleven">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                  Can I delete my artwork?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#FAQs">
+              <div class="card-body">
+                While we don't offer an option to delete your masterpiece, if you'd really like no one to be able to own
+                your artwork ever again you can transfer it to this address: 0x000000000000000000000000000000000000dead <br>
+                This is an irreversible action, so proceed with caution.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwelve">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                  How much can I earn by selling NFTs?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#FAQs">
+              <div class="card-body">
+                No one can answer this question. It totally depends on how much your NFTs are liked and then purchased. 
+                There are instances of Nayan Cats being sold at US $ 600 thousand. An NFT titled ‘Everydays - The First 5000 Days’ was sold for US $ 69 Million. 
+                Recently, one of the pictures of cryptopunks was sold for approx US $ 3.69 Million. So, nobody can tell you at what price you will be able to sell your NFT. 
+                Who knows, you could be the next Millionaire!              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="social-media-icons">
+          <a class="icon" href="https://twitter.com/CryptoRBharat"><i class="fab fa-twitter"></i></a>
+          <a class="icon" href="https://www.facebook.com/CryptoRBharat"><i class="fab fa-instagram"></i></a>
+          <a class="icon" href="https://www.youtube.com/channel/cryptorbharat"><i class="fab fa-youtube"></i></a>
+          <a class="icon" href="https://discord.gg/h2aFpgHD"><i class="fab fa-discord"></i></a>
+        </div>
+
+          <div class="links">
+          <a href="https://www.linkedin.com/company/crypto-r">LinkedIn</a>
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="community.html">Community Guidelines</a>
+          <a href="learn.html">FAQs</a>
+        </div>
+
+
+        <div class="company-name">
+          
+          <span>© 2022 Crypto<span id="mint">R</span> All Rights Reserved</span>
+        </div>
+
+      </div>
+    </footer>
+  </body>
+  <script src="assets/js/learn.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/js.cookie.js"></script>
+  <script src="assets/js/connectWallet.js"></script>
+  <script src="assets/js/profile.js"></script>
+
+</html>

@@ -1,0 +1,281 @@
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+header{
+  margin-top: 50px;
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.upload-form{
+  margin-top: 10px;
+}
+
+.file-upload{
+ text-align: center;
+ border: 1px solid #ddd;
+ padding: 20px;
+ border-radius: 5px;
+ margin-top: 10px;
+ margin-bottom: 10px;
+ border-radius: 15px;
+}
+
+label{
+  color: #aaa;
+}
+
+.label-info{
+  font-weight: 300;
+  font-size: .8rem;
+}
+
+.modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: block;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.upload-title{
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+#uploadImage{
+  margin-top: 10px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background: #ddd;
+  color: black;
+  transition: ease-in-out .15s;
+}
+
+#uploadImage:hover{
+  background: #007bff;
+  color: white;
+}
+
+#uploadImage:active{
+  transform: scale(.95);
+}
+
+#clearFile{
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: none;
+}
+
+#closeIcon1{
+  color: #007bff;
+}
+
+#closeIcon2{
+  color: #007bff;
+}
+
+video{
+  display: none;
+}
+
+audio{
+  display: none;
+}
+
+#formToUploadCover{
+  display: none;
+}
+
+#clearCover{
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  display: none;
+}
+
+#uploadCover{
+  margin-top: 10px;
+  cursor: pointer;
+  background: #ddd;
+  color: black;
+  transition: ease-in-out .15s;
+}
+
+#uploadCover:hover{
+  background: #007bff;
+  color: white;
+}
+
+#uploadCover:active{
+  transform: scale(.95);
+}
+
+#fileSizeExceededText{
+  display: block;
+}
+
+#nftSizeExceededText{
+  display: block;
+}
+
+.form-control{
+  color: black;
+}
+
+.helper{
+  margin-top: 10px;
+}
+
+.switch{
+  text-align: right;
+  position: relative;
+  margin-top: 15px;
+}
+
+.switch-title{
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.switch-subtitle{
+  position: relative;
+  left: 0;
+  top: 25px;
+  font-size: .8rem;
+  color: #aaa;
+}
+
+#priceInputGroup{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#salePriceInput{
+  margin-top: 5px;
+}
+
+.input-styling{
+  padding-left: 0;
+  padding-right: 0;
+  border: none;
+  border-bottom: 1px solid #eee;
+  border-radius: 0;
+ -webkit-box-shadow: none;
+  box-shadow: none;
+  background: transparent;
+  font-weight: 500;
+}
+
+.input-styling:focus{
+ -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid #aaa;
+  background: transparent;
+}
+
+.input-styling:disabled {
+  background: transparent;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: .9rem;
+  font-weight: 500;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-size: .9rem;
+  font-weight: 500;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-size: .9rem;
+  font-weight: 500;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.input-group>.form-control{
+  width: 100%!important;
+}
+
+.price-info{
+  font-size: .8rem;
+  color: #aaa;
+}
+
+.sub-text{
+  font-size: .8rem;
+  color: #aaa;
+}
+
+#saleProfit{
+  background: -webkit-linear-gradient(260deg, rgba(249, 37, 0, 0.89) 0%, rgba(251, 63, 72, 0.89) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#unlockableContentInputGroup{
+  display: none;
+}
+
+#unlockableContentText{
+  margin-top: 5px;
+}
+
+.input-title{
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+#royaltyAmount{
+  margin-left: 5px;
+  background: -webkit-linear-gradient(260deg, rgba(249, 37, 0, 0.89) 0%, rgba(251, 63, 72, 0.89) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+#royalties{
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.slider-title{
+  color: black;
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.create-button{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+.button-styling{
+  border-radius: 25px;
+  padding: 10px 15px;
+  font-weight: 700;
+}
+
+#successfulText{
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.center-content{
+  display: flex;
+  justify-content: center;
+}

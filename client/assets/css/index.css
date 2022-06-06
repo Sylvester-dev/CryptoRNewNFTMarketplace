@@ -1,0 +1,113 @@
+::-webkit-scrollbar {
+  height: 5px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.recently-sold{
+  margin-top: 50px;
+  display: none;
+}
+
+.center-content{
+  display: flex;
+  justify-content: center;
+}
+
+#loader{
+  margin: 0 auto;
+}
+
+.header{
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+@media (max-width: 396px) { /*for sm mobile */
+  .header{
+    font-size: 1.3rem;
+  }
+}
+
+.scroll-wrapper{
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding-left: 15px;
+}
+
+.sorting-button{
+  cursor: pointer;
+}
+
+.count-text{
+  font-size: .8rem;
+  position: relative;
+  bottom: 5px;
+}
+
+.recently-minted{
+  margin-top: 50px;
+}
+
+.no-art-for-sale{
+  padding: 50px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2rem;
+}
+
+.gradient-text{
+  background: -webkit-linear-gradient(260deg, rgba(249, 37, 0, 0.89) 0%, rgba(251, 63, 72, 0.89) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.price-input-group{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.input-styling{
+  padding-left: 10px;
+  padding-right: 0;
+  border: none;
+  border-bottom: 1px solid #eee;
+  border-radius: 0;
+ -webkit-box-shadow: none;
+  box-shadow: none;
+  background: transparent;
+  color: #8a8a8a;
+}
+
+.input-styling:focus{
+ -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid #aaa;
+  background: transparent;
+  color: #8a8a8a;
+}
+
+.price-info{
+  font-size: .8rem;
+  color: #aaa;
+}
+
+.sale-profit{
+  background: -webkit-linear-gradient(260deg, rgba(249, 37, 0, 0.89) 0%, rgba(251, 63, 72, 0.89) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modal-text{
+  font-weight: 600;
+  font-size: 1.4rem;
+}

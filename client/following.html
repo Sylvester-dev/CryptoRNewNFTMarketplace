@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style_home.css" />
+    <link rel="stylesheet" href="assets/css/card.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images-icons/CryptoRLogo.png"
+    />
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis@0.0.184/dist/moralis.js"></script>
+    <script
+      src="https://kit.fontawesome.com/99c803f139.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <title>CryptoR - Create, buy, and sell digital artwork</title>
+  </head>
+  <body>
+    <div class="main">
+      <header id="header">
+        <nav
+          data-aos="zoom-out"
+          data-aos-delay="800"
+          class="navbar navbar-expand"
+        >
+          <div class="container header">
+            <a class="navbar-brand" href="index.html">
+              <img
+                class="navbar-brand-sticky"
+                src="assets/images-icons/CryptoRLogo.png"
+                alt="CryptoR logo"
+              />
+            </a>
+            <div class="ml-auto"></div>
+            <!-- Navbar -->
+
+            <ul class="navbar-nav items mx-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="following.html" class="nav-link">Following</a>
+              </li>
+              <li class="nav-item">
+                <a href="academy.html" class="nav-link">Academy</a>
+              </li>
+              <li class="nav-item">
+                <a href="create.html" id="create" class="nav-link">Create</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#"
+                  >Explore <i class="fas fa-angle-down ml-1"></i
+                ></a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="stats.html" class="nav-link">My stats</a>
+                  </li>
+                  <li class="nav-item" id="myProfile">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="edit-profile.html" class="nav-link"
+                      >Edit Profile</a
+                    >
+                  </li>
+                  <li class="nav-item" id="disconnectWalletBtn">
+                    <a class="nav-link">Disconnect wallet</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">Contact</a>
+              </li>
+              <!-- Navbar Action Button -->
+              <ul class="navbar-nav action">
+                <li class="nav-item ml-3" id="connectWalletTag">
+                  <button
+                    type="button"
+                    href="wallet-connect.html"
+                    class="btn ml-lg-auto btn-bordered-white"
+                    id="connectWalletBtn"
+                  >
+                    <i class="icon-wallet mr-md-2"></i>Wallet Connect
+                  </button>
+                </li>
+              </ul>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <!-- ***** Breadcrumb Area Start ***** -->
+      <section class="breadcrumb-area overlay-dark d-flex align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <!-- Breamcrumb Content -->
+              <div class="breadcrumb-content text-center">
+                <h2 class="m-0">Following</h2>
+                <ol class="breadcrumb d-flex justify-content-center">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item active">Following</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Breadcrumb Area End ***** -->
+      <div class="container col-11">
+        <div class="modals"></div>
+
+        <section class="following container-fluid">
+          <header class="header">
+            Following <span id="amountFollowing"></span>
+            <div class="price-info sub-title">
+              Minted artwork from people you follow
+            </div>
+          </header>
+
+          <div class="sorting-row">
+            <ul class="nav nav-pills" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link sorting-button active"
+                  data-toggle="pill"
+                  id="viewAll"
+                  >All <span class="count-text" id="allCount"></span
+                ></a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link sorting-button"
+                  data-toggle="pill"
+                  id="forSale"
+                  >For Sale <span class="count-text" id="forSaleCount"></span
+                ></a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link sorting-button"
+                  data-toggle="pill"
+                  id="notForSale"
+                  >Not For Sale
+                  <span class="count-text" id="notForSaleCount"></span
+                ></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="following-wrapper cardDivs row">
+            <div
+              id="loader"
+              class="spinner-border mt-5 text-primary"
+              style="width: 3rem; height: 3rem"
+              role="status"
+            >
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </section>
+
+        <div
+          id="ifWalletNotConnectedModal"
+          class="modal"
+          data-backdrop="static"
+          data-keyboard="false"
+          tabindex="-1"
+          role="dialog"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header center-content">
+                <h5 class="modal-title">Connect Wallet To View</h5>
+              </div>
+              <div class="modal-body center-content">
+                <button
+                  type="button"
+                  class="btn btn-secondary button-styling mr-2"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary button-styling"
+                  id="connectWalletModalBtn"
+                >
+                  Connect Wallet
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of page container -->
+
+      <!-- page will load more items on scroll so footer might not be neccessary -->
+      <!--====== Footer Area Start ======-->
+      <footer class="footer-area">
+        <!-- Footer Top -->
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-lg-3 res-margin">
+                <!-- Footer Items -->
+                <div class="footer-items">
+                  <!-- Logo -->
+                  <a class="navbar-brand" href="index.html">
+                    <img src="assets/images-icons/CryptoRLogo.png" alt="" />
+                  </a>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Quis non, fugit totam vel laboriosam vitae.
+                  </p>
+                  <!-- Social Icons -->
+                  <div class="social-icons d-flex">
+                    <a class="facebook" href="#">
+                      <i class="fab fa-facebook-f"></i>
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="twitter" href="#">
+                      <i class="fab fa-twitter"></i>
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="google-plus" href="#">
+                      <i class="fab fa-google-plus-g"></i>
+                      <i class="fab fa-google-plus-g"></i>
+                    </a>
+                    <a class="vine" href="#">
+                      <i class="fab fa-vine"></i>
+                      <i class="fab fa-vine"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3 res-margin">
+                <!-- Footer Items -->
+                <div class="footer-items">
+                  <!-- Footer Title -->
+                  <h4 class="footer-title">Useful Links</h4>
+                  <ul>
+                    <li><a href="#">All NFTs</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">Create</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Privacy &amp; Terms</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3 res-margin">
+                <!-- Footer Items -->
+                <div class="footer-items">
+                  <!-- Footer Title -->
+                  <h4 class="footer-title">Community</h4>
+                  <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Suggestions</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <!-- Footer Items -->
+                <div class="footer-items">
+                  <!-- Footer Title -->
+                  <h4 class="footer-title">Subscribe Us</h4>
+                  <!-- Subscribe Form -->
+                  <div class="subscribe-form d-flex align-items-center">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="info@yourmail.com"
+                    />
+                    <button type="submit" class="btn">
+                      <i class="icon-paper-plane"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <!-- Copyright Area -->
+                <div
+                  class="copyright-area d-flex flex-wrap justify-content-center justify-content-sm-between text-center py-4"
+                >
+                  <!-- Copyright Left -->
+                  <div class="copyright-left">
+                    &copy;2022 CryptoR All Rights Reserved
+                  </div>
+                  <!-- Copyright Right -->
+                  <div class="copyright-right">
+                    Made with <i class="fas fa-heart"></i> By
+                    <a href="#">cryptoR</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- ***** All jQuery Plugins ***** -->
+
+    <!-- jQuery(necessary for all JavaScript plugins) -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap js -->
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+    <!-- Plugins js -->
+    <script src="assets/js/vendor/all.min.js"></script>
+    <script src="assets/js/vendor/slider.min.js"></script>
+    <script src="assets/js/vendor/countdown.min.js"></script>
+    <script src="assets/js/vendor/shuffle.min.js"></script>
+
+    <!-- Active js -->
+    <script src="assets/js/main.js"></script>
+  </body>
+  <script src="assets/js/following.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/connectWallet.js"></script>
+  <script src="assets/js/abi.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/js.cookie.js"></script>
+  <script src="assets/js/profile.js"></script>
+</html>

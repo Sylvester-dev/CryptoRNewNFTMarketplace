@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style_home.css">
+    <link rel="stylesheet" href="assets/css/erc-721.css">
+    
+    <link rel="icon" type="image/png" href="assets/images-icons/CryptoRLogo.png">
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis@0.0.184/dist/moralis.js"></script>
+    <script src="https://kit.fontawesome.com/99c803f139.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <title>CryptoR - Create, buy, and sell digital artwork</title>
+  </head>
+  <body>
+    <div class="main">
+    <header id="header">
+      <nav
+        data-aos="zoom-out"
+        data-aos-delay="800"
+        class="navbar navbar-expand"
+      >
+        <div class="container header">
+          <a class="navbar-brand" href="index.html">
+            <img
+              class="navbar-brand-sticky"
+              src="assets/images-icons/CryptoRLogo.png"
+              alt="CryptoR logo"
+            />
+          </a>
+          <div class="ml-auto"></div>
+          <!-- Navbar -->
+
+          <ul class="navbar-nav items mx-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="following.html" class="nav-link">Following</a>
+            </li>
+            <li class="nav-item">
+              <a href="academy.html" class="nav-link">Academy</a>
+            </li>
+            <li class="nav-item">
+              <a href="create.html" id="create" class="nav-link">Create</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#"
+                >Explore <i class="fas fa-angle-down ml-1"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a href="stats.html" class="nav-link">My stats</a>
+                </li>
+                <li class="nav-item" id="myProfile">
+                  <a href="profile.html" class="nav-link">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a href="edit-profile.html" class="nav-link"
+                    >Edit Profile</a
+                  >
+                </li>
+                <li class="nav-item" id="disconnectWalletBtn">
+                  <a class="nav-link">Disconnect wallet</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">Contact</a>
+            </li>
+            <!-- Navbar Action Button -->
+            <ul class="navbar-nav action">
+              <li class="nav-item ml-3" id="connectWalletTag">
+                <button
+                  type="button"
+                  href="wallet-connect.html"
+                  class="btn ml-lg-auto btn-bordered-white"
+                  id="connectWalletBtn"
+                >
+                  <i class="icon-wallet mr-md-2"></i>Wallet Connect
+                </button>
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+
+    <div class="container">
+
+      <div id="ifWalletNotConnectedModal" class="modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header center-content">
+              <h5 class="modal-title">Must Connect Wallet To Continue</h5>
+            </div>
+            <div class="modal-body center-content">
+              <button type="button" class="btn btn-secondary button-styling mr-2" id="goBackBtn">Go Back</button>
+              <button type="button" class="btn btn-primary button-styling" id="connectWalletModalBtn">Connect Wallet</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="fileSizeModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">File Size Too Large</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div id="fileSizeModalBody" class="modal-body text-danger">
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary button-styling" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="make-single">
+        <header>
+          Create a single NFT
+        </header>
+
+        <div class='upload-form'>
+
+          <form>
+            <span class="upload-title">Upload file</span>
+
+            <div class="form-group file-upload">
+              <button id="clearFile" class="btn btn-light close" aria-label="Close"><span id="closeIcon1" aria-hidden="true">&times;</span></button>
+              <label id="imageFileLabel">PNG, JPEG, GIF, WEBP, MP4 or MP3. (64 MB max) <br> <span class="label-info">If file larger than 64 MB<br>add a link to download a high-res version below under <span class="text-primary" id="unlockableContentTooltip" data-toggle="tooltip" data-placement="top" title="This is content that only the owner of the artwork can see and transfers with ownership on CryptoR.">unlockable content</span>.<span> </label>
+              <img src="" id="nftImgEx" width="200px">
+              <video src="" id="nftVidEx" autoplay controls loop disablePictureInPicture controlsList="nofullscreen nodownload" width="200px"></video>
+              <audio src="" id="nftAudEx" width="200px" autoplay controls controlsList="nodownload"></audio>
+              <input required id="nftImgFile" hidden accept="image/png,image/jpeg,image/gif,image/webp,video/mp4,video/webm,audio/mp3,audio/webm,audio/mpeg" type="file" class="form-control-file">
+              <div class="upload-button-div">
+                <label id="uploadImage" class="button-styling" for="nftImgFile">Choose File</label>
+              </div>
+              <span id='nftSizeExceededText' class="text-danger"></span>
+            </div>
+
+            <div id="formToUploadCover">
+              <span class="upload-title">Upload cover</span>
+
+              <div class="form-group file-upload">
+                <button id="clearCover" class="btn btn-light close" aria-label="Close"><span id="closeIcon2" aria-hidden="true">&times;</span></button>
+                <label id="coverLabel">PNG, JPEG, GIF or WEBP. (3 MB max)<br> <span class="label-info">This is the image seen first.</span></label>
+                <img id="nftCoverEx" src="" width="200px">
+                <input id="nftCoverFile" hidden accept="image/png,image/jpeg,image/gif,image/webp" type="file" class="form-control-file">
+                <div class="cover-upload-button-div">
+                  <label id="uploadCover" class="button-styling" for="nftCoverFile">Choose File</label>
+                </div>
+                <span id='fileSizeExceededText' class="text-danger"></span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class='col-lg-12'>
+
+                <div class="switch">
+                  <div class="custom-control custom-switch">
+                    <span class="switch-title">For Sale On Market</span>
+                    <span class="switch-subtitle">This can always be changed later</span>
+                    <input type="checkbox" checked="checked" class="custom-control-input" id="onSaleSwitch">
+                    <label class="custom-control-label" for="onSaleSwitch"></label>
+                  </div>
+                </div>
+
+                <div id="priceInputGroup">
+                  <div class="input-group">
+                    <input id="salePriceInput" required name="Initial price of NFT" title="Price cannot have more than 18 digits before or 15 digits after the decimal" type="text" class="form-control input-styling" placeholder="Enter price in BNB - e.g. 1.69" aria-label="ether amount">
+                  </div>
+
+                  <div class="price-calculator price-info">
+                    <span>Service Fee Upon Sale <span>2%</span></span><br>
+                    <span>Your profit will be: <span id="saleProfit">0 BNB</span> <span id="usdProfit">$0.00</span></span>
+                  </div>
+                </div>
+
+                <div class="switch" id="unlockableContent">
+                  <div class="custom-control custom-switch">
+                    <span class="switch-title">Unlockable Content</span>
+                    <span class="switch-subtitle">**This can only be set here**</span>
+                    <input type="checkbox" class="custom-control-input" id="unlockableSwitch">
+                    <label class="custom-control-label" for="unlockableSwitch"></label>
+                  </div>
+                </div>
+
+                <div class="helper">
+                  <div id="unlockableContentInputGroup">
+                    <div class="input-group">
+                      <input id="unlockableContentText" type="text" class="form-control input-styling" placeholder="Link to high-res download, code to redeem etc." aria-label="file, code, or key to unlock content">
+                    </div>
+                    <span class='sub-text'>This information will be off-chain but CANNOT be changed</span>
+                  </div>
+                </div>
+
+                <div class="helper">
+                  <div class="form-group" id="royalties">
+                    <label class="slider-title">Royalties</label>
+                    <span id="royaltyAmount">10%</span>
+                    <input type="range" class="form-control-range" min="1" max="50" value="10" id="royaltySlider">
+                  </div>
+                  <span class='sub-text'>This information will be put on-chain and CANNOT be changed</span>
+                </div>
+
+                <div class="helper">
+                  <div class="input-group" id="namingInputGroup">
+                    <span class="input-title">Title</span>
+                    <input required id="title" maxlength="88" type="text" class="form-control input-styling naming-styling" placeholder='e.g. "The Finisher Car"' aria-label="title of NFT">
+                  </div>
+                  <span class='sub-text'>This information will be put on-chain and CANNOT be changed</span>
+                </div>
+
+                <div class="helper">
+                  <div class="input-group" id="description">
+                    <span class="input-title">Description</span>
+                    <textarea id="descriptionInput" type="text" class="form-control input-styling naming-styling" placeholder='e.g. "A car of the gods, a golden god!"' aria-label="description of NFT"></textarea>
+                  </div>
+                  <span class='sub-text'>This information will be put on-chain and CANNOT be changed</span>
+                </div>
+
+                <div class="helper">
+                  <div class="input-group" id="additionalInfo">
+                    <span class="input-title">Additional Info</span>
+                    <input id="additionalInfoInput" type="text" class="form-control input-styling naming-styling" placeholder='e.g. "High-res download link granted after purchase"' aria-label="additional info for nft">
+                  </div>
+                  <span class='sub-text'>This information will be off-chain and CAN be changed</span>
+                </div>
+
+                <div class="create-button">
+                  <button type="submit" class="btn btn-primary button-styling shadow-sm" style="margin: 10px;" disabled id="createButton">Create</button>
+                </div>
+
+                <div class="modal fade" id="createModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle">Follow prompts to create</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <button type="button" class="btn btn-primary btn-block button-styling shadow-sm" id="setApprovalBtn">Set Approval To Sell</button>
+                        <button type="button" class="btn btn-primary btn-block button-styling shadow-sm" id="saveToIPFSBtn">Upload and Mint</button>
+                        <button type="button" class="btn btn-primary btn-block button-styling shadow-sm" id="setOffer">Put On Sale</button>
+                        <span class="mt-2" id='successfulText'></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+ <!--====== Footer Area Start ======-->
+ <footer class="footer-area">
+  <!-- Footer Top -->
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-lg-3 res-margin">
+          <!-- Footer Items -->
+          <div class="footer-items">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/images-icons/CryptoRLogo.png" alt="" />
+            </a>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Quis non, fugit totam vel laboriosam vitae.
+            </p>
+            <!-- Social Icons -->
+            <div class="social-icons d-flex">
+              <a class="facebook" href="#">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a class="twitter" href="#">
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a class="google-plus" href="#">
+                <i class="fab fa-google-plus-g"></i>
+                <i class="fab fa-google-plus-g"></i>
+              </a>
+              <a class="vine" href="#">
+                <i class="fab fa-vine"></i>
+                <i class="fab fa-vine"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 res-margin">
+          <!-- Footer Items -->
+          <div class="footer-items">
+            <!-- Footer Title -->
+            <h4 class="footer-title">Useful Links</h4>
+            <ul>
+              <li><a href="#">All NFTs</a></li>
+              <li><a href="#">How It Works</a></li>
+              <li><a href="#">Create</a></li>
+              <li><a href="#">Explore</a></li>
+              <li><a href="#">Privacy &amp; Terms</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 res-margin">
+          <!-- Footer Items -->
+          <div class="footer-items">
+            <!-- Footer Title -->
+            <h4 class="footer-title">Community</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Suggestions</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Newsletter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <!-- Footer Items -->
+          <div class="footer-items">
+            <!-- Footer Title -->
+            <h4 class="footer-title">Subscribe Us</h4>
+            <!-- Subscribe Form -->
+            <div class="subscribe-form d-flex align-items-center">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="info@yourmail.com"
+              />
+              <button type="submit" class="btn">
+                <i class="icon-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Copyright Area -->
+          <div
+            class="copyright-area d-flex flex-wrap justify-content-center justify-content-sm-between text-center py-4"
+          >
+            <!-- Copyright Left -->
+            <div class="copyright-left">
+              &copy;2022 CryptoR All Rights Reserved
+            </div>
+            <!-- Copyright Right -->
+            <div class="copyright-right">
+              Made with <i class="fas fa-heart"></i> By
+              <a href="#">cryptoR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!-- jQuery(necessary for all JavaScript plugins) -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap js -->
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+    <!-- Plugins js -->
+    <script src="assets/js/vendor/all.min.js"></script>
+    <script src="assets/js/vendor/slider.min.js"></script>
+    <script src="assets/js/vendor/countdown.min.js"></script>
+    <script src="assets/js/vendor/shuffle.min.js"></script>
+
+    <!-- Active js -->
+    <script src="assets/js/main.js"></script>
+  </div>
+  </body>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/js.cookie.js"></script>
+  <script src="assets/js/erc-721.js"></script>
+  <script src="assets/js/abi.js"></script>
+  <script src="assets/js/connectWallet.js"></script>
+  <script src="assets/js/profile.js"></script>
+
+</html>

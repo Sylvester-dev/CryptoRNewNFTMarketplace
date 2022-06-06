@@ -1,0 +1,176 @@
+.grid-helper{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.card{
+  background: rgb(14, 14, 14);
+  padding-top: 15px;
+  border-radius: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.unlockable-content-shadow{
+  -webkit-box-shadow: -.05rem .125rem .5rem  rgba(251, 63, 110, 0.75), .05rem .125rem .5rem  rgba(249, 29, 0, 0.75)!important;
+  box-shadow: -.05rem .125rem .5rem rgba(251, 63, 88, 0.75), .05rem .125rem .5rem  rgba(249, 37, 0, 0.75)!important;
+}
+
+.top-row{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.owner{
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  object-fit: scale-down; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+}
+
+.rank-badge{
+  display: inline-flex;
+  position: relative;
+  right: 17px;
+  top: 19px;
+}
+
+.dropdown-button{
+  font-family: serif;
+  border-radius: 20px;
+  font-weight: 700;
+  padding: 5px 13px 10px;
+}
+
+.embed-responsive .card-img{
+  object-fit: scale-down;
+}
+
+.card-img{
+  padding: 20px;
+}
+
+.file-indicator{
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+}
+
+.card-body{
+  text-align: left;
+  white-space: normal;
+  font-weight: 600;
+}
+
+.card-title{
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+a.anchor{
+  color: black;
+}
+
+.card-text{
+  color: #888;
+  font-weight: 600;
+}
+
+.price-sold{
+  background: -webkit-linear-gradient(260deg, rgba(249, 37, 0, 0.89) 0%, rgba(251, 63, 72, 0.89) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.not-for-sale-text{
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.for-sale-text{
+  background: -webkit-linear-gradient(260deg, rgba(249, 37, 0, 0.89) 0%, rgba(251, 63, 72, 0.89) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.heart{
+  padding-top: 15px;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.fas{
+  color: #f50057;
+}
+
+.heart:hover{
+  color: #f50057;
+  transition: ease-in-out .2s;
+}
+
+.heart:active{
+  transform: scale(.9);
+}
+
+.like-counter{
+  font-size: .9rem;
+}
+
+.like-encourage-text{
+  font-family: 'Rubik';
+  font-weight: 900;
+  color: #888!important;
+}
+
+.like-encourage-button{
+  padding: 0;
+  background: transparent;
+  border: none;
+  margin-right: 5px;
+  border-radius: 10px;
+}
+
+.like-encourage-button:hover{
+  background: transparent!important;
+  border: none!important;
+}
+
+.like-encourage-button:active{
+  background: transparent!important;
+  border: none!important;
+}
+
+.like-encourage-button:focus{
+  box-shadow: none!important;
+}
+
+.fa-concierge-bell{
+  cursor: pointer;
+  color: #aaa;
+  transition: ease-in-out .2s
+}
+
+.fa-concierge-bell:hover{
+  transform: scale(1.1);
+}
+
+.fa-concierge-bell:active{
+  transform: scale(.9);
+}
+
+.view-btn, .buy-btn{
+  float:left;
+  border-radius: 25px;
+  font-weight: 700;
+}
+
+

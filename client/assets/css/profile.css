@@ -1,0 +1,265 @@
+.container-fluid{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+#notYetConnectedText{
+  margin-top: 200px;
+  margin-bottom: 450px;
+  padding: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.gradient-text{
+  background: -webkit-linear-gradient(260deg, rgba(0,222,249,1) 0%, rgba(63,94,251,1) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.profile{
+  width: 100%;
+}
+
+.profile-picture{
+  margin-top: 50px;
+}
+
+.profile-photo{
+  border-radius: 60px;
+  position: relative;
+  top: 15px;
+  display: none;
+  width: 120px;
+  height: 120px;
+  object-fit: scale-down; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+}
+
+.seller-badge{
+  position: relative;
+  bottom: 13px;
+  left: 42px;
+}
+
+#sellerRank{
+  display: none;
+}
+
+#username{
+  font-size: 1.5rem;
+}
+
+#copyAddressBtn{
+  padding-bottom: 10px;
+}
+
+.icon{
+  width: 20px;
+}
+
+#bio{
+  margin-top: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.social-media-tags{
+  margin-top: 20px;
+  display: none;
+}
+
+.social-tag{
+  margin-right: 10px;
+  color: black;
+}
+
+#twitter{
+  display: none;
+}
+
+#instagram{
+  display: none;
+}
+
+.tip{
+  margin-top: 15px;
+}
+
+.follow-share{
+  margin-top: 15px;
+}
+
+#dropdownMenuTitle{
+  padding-left: 10px;
+}
+
+.button-outline{
+  font-weight: 700;
+  border: 1px solid #999;
+}
+
+.profile-bottom-half{
+  margin-top: 30px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.sorting-row{
+  padding-left: 5px;
+}
+
+.tab{
+  color: #666;
+  padding: 6px;
+}
+
+.tab:hover{
+  cursor: pointer;
+}
+
+.count-text{
+  font-size: .8rem;
+  position: relative;
+  bottom: 5px;
+}
+
+#loader{
+  margin: 0 auto;
+}
+
+.price-input-group{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.input-styling{
+  padding-left: 10px;
+  padding-right: 0;
+  border: none;
+  border-bottom: 1px solid #eee;
+  border-radius: 0;
+ -webkit-box-shadow: none;
+  box-shadow: none;
+  background: transparent;
+  color: #8a8a8a;
+}
+
+.input-styling:focus{
+ -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid #aaa;
+  background: transparent;
+  color: #8a8a8a;
+}
+
+.price-info{
+  font-size: .8rem;
+  color: #aaa;
+  text-align: left;
+}
+
+.sale-profit{
+  background: -webkit-linear-gradient(260deg, rgb(249, 50, 0) 0%, rgb(251, 63, 88) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modal-body{
+  text-align: left;
+}
+
+.modal-text{
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+#tipInputGroup{
+  margin-top: 10px;
+}
+
+.input-styling{
+  padding-left: 0;
+  padding-right: 0;
+  border: none;
+  border-bottom: 1px solid #eee;
+  border-radius: 0;
+ -webkit-box-shadow: none;
+  box-shadow: none;
+  background: transparent;
+  font-weight: 500;
+}
+
+.input-styling:focus{
+ -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid #aaa;
+  background: transparent;
+}
+
+.input-styling:disabled {
+  background: transparent;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: .9rem;
+  font-weight: 500;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-size: .9rem;
+  font-weight: 500;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-size: .9rem;
+  font-weight: 500;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.input-group>.form-control{
+  width: 100%!important;
+}
+
+.sub-text{
+  font-size: .8rem;
+  color: #aaa;
+}
+
+.center-content{
+  display: flex;
+  justify-content: center;
+}
+
+.list-group{
+  margin: 15px auto;
+  max-height: 500px;
+  overflow-y: scroll;
+  text-align: center;
+  justify-content: center;
+}
+
+.list-group-item{
+  border: none;
+  background-color: inherit;
+}
+
+.owner-div{
+  margin-right: 15px;
+}
+
+@media (max-width: 447px) {
+  .username{
+    font-size: .8rem;
+  }
+}
+
+.amount-of-followers{
+  text-align: left!important;
+}

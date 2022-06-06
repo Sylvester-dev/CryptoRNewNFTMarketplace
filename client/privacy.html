@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/learn.css">
+    <link rel="stylesheet" href="assets/css/basics.css">
+    <link rel="icon" type="image/png" href="assets/images-icons/CryptoRLogo.png">
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis@0.0.184/dist/moralis.js"></script>
+    <script src="https://kit.fontawesome.com/99c803f139.js" crossorigin="anonymous"></script>
+    <title>CryptoR - Create, buy, and sell digital artwork backed by Avalanche blockchain technology</title>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/images-icons/CryptoRLogoBeta.png" width="176" height="36" class="d-inline-block align-top" alt="CryptoR logo">
+      </a>
+      <span class="input-group searchbar">
+        <span id="exitSearchBtn">
+          <span class="exit-search">⬅️</span>
+        </span>
+        <input type="search" id="searchInput" class="form-control search-input" placeholder="Search by Creator, Artwork Title, or Wallet Address" aria-label="Search by creator, artwork title, or wallet address">
+      </span>
+      <button class="btn search-button" id="searchBtn">🔍</button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="following.html">Following</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="privacy.html">Privacy<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="create" href="create.html">CREATE</a>
+          </li>
+          <li class="nav-item mr-1" id="connectWalletTag">
+            <button type="button" class="btn btn-primary button-styling shadow-sm" id="connectWalletBtn">Connect</button>
+          </li>
+          <li class="nav-item dropdown mr-2" id="profileTag" style="display: none;">
+            <a class="nav-link dropdown-toggle shadow-sm" href="#" id="profile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id="userAddress"></span>
+              <span id="spinnerBorderInNav" class="spinner-border text-primary" style="margin: 0 5px; width: 1.25rem; height: 1.25rem;" role="status">
+                <span class="sr-only">Loading...</span>
+              </span>
+              <img src="" class="shadow-sm" id="profilePhotoInNav" width="30px">
+              <img id="rankInNav" src="" width="12px" alt="seller badge">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="profile">
+              <a class='dropdown-item' href="stats.html">My Stats</a>
+              <a id="myProfile" class='dropdown-item' href="profile.html">My Profile</a>
+              
+              <a class='dropdown-item' href="edit-profile.html">Make/Edit Profile</a>
+              <hr>
+              <a class="dropdown-item" id="disconnectWalletBtn">Disconnect Wallet</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-light theme" id="forDarkMode">
+              <img src="assets/images-icons/darkmode.png" width="30" height="30" alt="icon to initiate dark mode theme">
+            </button>
+            <button type="button" class="btn btn-dark theme" id="forLightMode">
+              <img src="assets/images-icons/lightmode.png" width="30" height="30" alt="icon to initiate light mode theme">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="privacy-page">
+        <header>
+          <img src="assets/images-icons/CryptoRLogo.png" width="100" height="100" alt="icon to initiate light mode theme">
+          Crypto<span id="mint">R</span>
+          <p class="subheader">Privacy Policy</p>
+        </header>
+        <div class="accordion" id="Privacy">
+          
+          <p style="position: relative;">(Last updated on 15.02.2022)</p>
+
+          <h2>Introduction:-</h2>
+<p>This Privacy Policy describes the policies and procedures of CryptoRNFT.Com  and its allied websites Cryptor.in, CryptoRDX.com, all their mobile applications and softwares, collectively called as the “Websites”, also being referred as “We”, “us”, “our”. This Privacy Policy is related to the collection, use and disclosure of your information on our Websites, and related decentralised applications and products that we offer, collectively termed as the “Services”.  <br><br>
+  While using the products and services of our Websites, our partners’ Websites and third party Websites, you give your consent to the collection, transfer, storage, disclosure, and use of your personal data and information as described in this Privacy Policy. This Privacy Policy does not apply to anonymised data, as it cannot be used to identify you.<br><br>
+  You are required to read this Privacy Policy document very carefully to understand our policies and practices regarding procuring and processing your personal data and information. This Policy may change from time to time. Your continued use of the Services after we make changes is deemed to be acceptance of those changes, so you are requested to check this Privacy Policy periodically for updates.<br><br>
+  We respect your right to privacy and your control over your personal data and information. By using our Websites and Services, you give your consent to the following Privacy Policy. To ensure that you understand our procedures to collect, use and share your personal data and information on our Websites, you are requested to go through the below points:<br><br>
+  </p>
+  <h2>Creation of Account:-
+    </h2>
+  <P>
+    If you create an account on our Websites to use our Services or for any other reason, we may use your name or your email address as your login name. The creation of an account is required because the Services may not be able to work without historical data. The legal basis of the processing is your consent.<br><br>
+    By using our Websites and/or visiting our website, you agree to the use, disclosure, and procedures outlined in this Privacy Policy.<br>
+  </P>
+<h1>Collection, Processing and Use of Personal Information and/or Data:-</h1>
+<p>
+  Collection, Processing and Use of Personal Information and/or Data:-<br><br>
+<b>1) Information that you provide to us:-<br>
+</b>
+(a) <b>Account Information:</b> We collect your account data, which may include your personal identification information such as your name, date of birth, age, nationality, gender, signature, utility bills, photographs, phone number, home address, and/or email address, and/or formal identification information such as Tax ID number, passport number, drivers license details, national identity card details, photograph identification cards, Aadhar card details, PAN card details and/or visa information; collectively termed as “Account Information”. The Account Information may be processed for the purposes of providing you our Services, know-your-customer obligations, satisfying anti-money laundering and ensuring the security of the Services, maintaining back-ups of our databases and establishing commufnication with you. This information is necessary for the adequate performance of the contract between you and us and to allow us to comply with our legal obligations. We may not be able to provide you with all the requested Services, in the absence of such information and data.<br>
+(b) <b>Payment Information:</b> We process your financial information such as your bank account, credit card, UPI information or PayPal information when you order Services in order to facilitate the processing of payments, collectively termed as, “Payment Information”. The legal basis for this processing is the performance of a contract between you and us and/or taking steps, at your request, to enter into such a contract and our legitimate interests, termed as “Our Interest” in the proper administration of our Websites, Services and business.<br>
+(c) <b>Correspondence Information:</b> We may process information contained in or relating to any communication that you send to us, termed as “Correspondence Information”. The Correspondence Information may include the communication content and metadata associated with the communication. The Correspondence Information may be processed for the purposes of communicating with you and record-keeping the same data. The legal basis for this processing of information is Our Interests towards administration of our Website, Services, business and communications with our users.<br>
+(d) <b>Profile Information:</b> We may process information included in your personal profile, which may include your location, time zone and website/s, termed as “Profile Information”. The Profile Information may be processed for the purposes of providing you a better user experience while using our Websites and our Services. The legal basis for this processing is your consent. <br><br>
+
+<b>2) Information that we automatically collect during your use of our Websites and Services:-</b><br>
+
+When you use the Services, certain information is processed automatically about your computer and internet connection. This includes your IP address, operating system, browser type, mobile carrier, device information which includes device and application IDs, search terms, cookie information, as well as information about the timing, frequency and pattern of your service use, and information about to the transactions you make on using our Services.This includes the name of the recipient, your name, the amount and type of cryptocurrency and timestamp. This will be referred as “Service Information”. The Service Information is processed for the purpose of providing you our Services. The legal basis for this processing is the adequate performance of the Agreement between you and us, to enable us to comply with legal obligations and our legitimate interest in being able to provide and improve the functionalities of the Services.<br><br>
+
+<b>3) Information that we collect from Third Parties:-</b>
+We may, from time to time, obtain information about you from third party sources as required or permitted by applicable laws; such as public databases, credit regulators, ID verification partners, resellers and channel partners, joint marketing partners and social media platforms. ID verification partners use a combination of government records and publicly available information about you to verify your personal identity. Such information includes your name, address, date of birth, job details, employment summary, credit history, status on any sanctions that would have been imposed and/or maintained by public authorities and any other relevant data. We obtain such information to comply with our legal obligations such as know your customers and anti-money laundering laws. The legal basis for the processing such data is compliance with legal obligations.<br><br>
+</p>
+<h1>Collection, Processing and Use of the Data that We collect:-
+</h1>
+<p>
+  
+A) When you use our Services, we may collect device and browser metadata such as IP addresses, Operating system type and version, date and time of access, the URLs of the pages you visited and also for how long you visited those pages, any referrer URL, interactions with user interface, the name of your access provider, and analytics information used by Google, Google Analytics, Facebook,  Moralis, Netlify, Godaddy, Bootstrap, Avalanche, Metamask, magic wallet and Ethereum, items that users like, users that users like, and possibly others. To the extent we collect this data, we may use it for the following purposes:<br><br>
+
+• To ensure a smooth connection to the Services;<br>
+• To ensure a great user experience of the Services;<br>
+• To evaluate system security and stability; and<br>
+• For general administrative purposes.<br>
+
+B) To use the Services offered by our Websites, you may be asked to register by providing registration information. In addition, you may be required to register through the Mobile Application. If you register for any reason, some or all of the following information may be collected:<br><br>
+
+• First and last name<br>
+• Account username<br>
+• Company<br>
+• Email<br>
+• Telephone<br>
+• Country<br>
+• City<br>
+• Cryptocurrency Wallet address<br>
+• Or other registration-related information<br>
+
+C) The information that we receive during the process of registration is processed for the following purposes:<br><br>
+
+• To verify your identity and location, and to help us connect you to your historical data and account.<br>
+By registering and using the Services, you consent to receive follow-up questions and other communication, either from us or from relevant third parties. <br>
+
+D) Normally, we use the personal information we collect from or about You to provide a smooth and secure access to our Website, Services, and offerings, to ensure a great user experience, to evaluate system security and stability, and for further administrative purposes. More specifically, we use and process your personal data to:<br><br>
+
+• Facilitate purchases and other interactions in the Services;<br>
+• Provide customer support;<br>
+• Respond to your requests and inquiries;<br>
+• Create and manage your account;<br>
+• Fulfill orders;<br>
+• Track advertising tailored to your interests on the Services and other websites;<br>
+• Improve and develop offerings and services;<br>
+• Prevent, detect, and respond to illegal or unauthorized activities;<br>
+• Communicate with any suppliers we use to perform any of the above; and<br>
+• Comply with the law<br><br>
+
+The legal basis for the data processing described in this section is your consent, and also the fulfillment of our obligations and provision of Services.<br>
+
+</p>
+<h1>Sharing / Disclosure of Your Personal Information:-
+</h1>
+<p>
+  It is important for you to learn where do we share and disclose your personal data. You may decide about your data and make take a call if you wish to share your personal information with us? It goes as below:It is important for you to learn where do we share and disclose your personal data. You may decide about your data and make take a call if you wish to share your personal information with us? It goes as below:<br><br>
+A) We may disclose your personal data to our allied websites, our group companies, our subsidiaries, our primary holding company and all its subsidiaries, so far as it is necessary for the purpose and as per the legal basis set out in this policy.<br>
+B) We may disclose Service Information to a variety of third party service providers as long as it is reasonably necessary to improve the functionalities of our Services. For example, we may disclose Service Data to have useful analytics, provide in-app support to our mobile application users, determine location data and provide search engine functionality to our users. <br>
+C) We may share and disclose aggregated data that is information about users which is shared after combining different inputs so that it no longer is able to identify or give reference of any individual user, and other anonymized information for regulatory compliance, industry and market analysis, demographic profiling, marketing and advertising, and other business purposes.  <br>
+D) In the event of a dispute arising out of a P2P transaction, we may disclose some of your Personal Information with the counterparty to such transaction to the extent we deem required, in our sole discretion, to resolve the dispute.<br>
+E) In addition to the specific disclosures of personal information and data as set out in this Section 5 of our Privacy Policy, we may disclose your personal information if we believe that it is reasonably necessary to comply with a law, regulation, legal process, or governmental request; or in order to protect your vital interests or the vital interests of another natural person; or to protect the safety or integrity of the Services; or to explain why we have removed content or accounts from the Services; or to address fraudulent activities, security, or technical issues; or to protect our rights or property or the rights or property of those who use the Services.<br>
+F) We offer individuals and users the opportunity to opt out whether their personal information is to be disclosed to a third party, <br><br>
+ to be used for a purpose that is materially different from the purpose(s) for which it was originally collected or subsequently authorized by the individuals. In order to opt out from disclosure of your personal information, you may please write to us at privacy@cryptor.in.  <br><br>
+</p>
+<h1>International Users And Visitors:-
+</h1>
+<p>If you are a User accessing the Services from the European Union, United States Of America, Asia, Australia or any other region with laws or regulations governing your personal data collection, use, and disclosure of the same that differ from laws of Republic Of India,  please be advised that through your continued use of the Services, which is governed by Indian laws, you are transferring your Personal Information to the Republic Of India and you consent to that transfer to us and our Websites, our partners’ Websites, our service providers’ Websites and/or our third part agents’ Websites.<br><br>
+</p>
+<h1>Retention And Deletion of Your Personal Information:-
+</h1>
+<p>
+  This section describes our data retention and data deletion policies to help us ensure that we comply with our legal obligations in relation to the retention and deletion of your personal data and information. It says:-<br><br>
+A) We process your personal information for any purpose or purposes shall not be kept for longer than is necessary for that purpose or those purposes.<br>
+B) Normally, we retain you personal information for as long as necessary to perform the Agreement between you and us and to comply with our legal obligations. If you no longer want us to use your information to provide the Services to you, you can request that we erase your personal information and close your account.<br>
+C) Notwithstanding the other provision of this Section 7 of our Privacy Policy, we may retain your personal data or part of your personal data where such retention is necessary for compliance purpose with a legal obligation to which we are subject, or in order to protect your vital interests or the vital interests of another natural person.<br>
+D) Any data that is no longer needed for the purpose or purposes specified in this Privacy Policy will be deleted after ninety (90) days. Wallet addresses created through our Websites cannot be deleted from the Binance blockchain, therefore we are unable to delete this personal information.<br><br>
+</p>
+<h1>Data Security:-
+</h1>
+<p>We are committed to make sure that your information is protected and have selected third-party vendors which use the Avalanche network, including magic Wallet and Metamask, that help keep your Personal Information safe and secure. Unfortunately, we do not control these third parties and therefore cannot guarantee complete security. We employ several physical and electronic safeguards to keep your information safe, including encrypted user passwords, two factor verification, anti-phishing code and authentication on passwords wherever possible, and securing all connections with industry standard transport layer security. Even with all these precautions, we cannot fully guarantee against the access, disclosure, alteration, or deletion of data through events, including but not limited to hardware or software failure or unauthorized use. Any information that you provide to us is done so entirely at your own risk.<br><br>
+  Also, unfortunately, the transmission of information via public networks such as the internet is not completely secure. Although we do our best to protect your personal data, we cannot guarantee the security of your personal data transmitted through the Services. Any transmission of personal data is at your own risk. We are not responsible for the circumvention of any privacy settings or security measures contained on the Services.<br><br>
+</p>
+<h1>Policy Related to Children 
+</h1>
+<p>Our Services are not intended for the use of children. You must also be old enough to consent to the processing of your personal data in your country without parental consent. No one under the age of 18 years may provide any personal information through the Services. If you are under 18 years of age, then please do not use or provide any information through the Services or through any of their features or register an account, make any purchases through the Services, use any of the interactive features of the Services or provide any information about yourself to us, including your name, address, telephone number, e-mail address or any screen name or user name that you may use.<br><br>
+</p>
+<h1>Cookies Policy
+</h1>
+<p>A)  You should first understand what cookies are? Cookies can be described as below:<br><br>
+  i) A cookie can be defined as a file that contains an identifier in the form of a string of letters and numbers, which is sent by a web server to a web browser and is stored by the browser. The identifier is then sent back to the server each time the browser requests a page from the server.<br>
+  ii) Cookies may be either persistent cookies or session cookies. A persistent cookie will be stored by a web browser and will remain valid until its set expiry date or unless it is deleted by the user before the expiry date.  However, a session cookie will expire at the end of the user session, when the web browser is closed.<br>
+  Iii) Cookies do not usually contain any information that personally identifies a user. However, the personal information that we store about you may be linked to the information stored in, and may be obtained from cookies.<br>
+  iv) We also use other technologies that have similar functionalities that of cookies, such as web storage, web beacons and unique advertising identifiers to collect information about your activity, browser, and device.<br><br>
+  B) Below are the technologies that we use and their purposes:<br><br>
+  i) to identify you and log you into the Services,<br>
+  ii) to store the information about your preferences and to personalise the Services for you,<br>
+  iii) as an important element of security apparatus that is used to protect user accounts, including preventing fraudulent use of login credentials, and to protect our website and services in general,<br>
+  iv) to store your preferences in relation to the use of cookies more generally,<br>
+  v) to help us analyse the use and performance of the Services, and<br>
+  vi) to help us display content that could be relevant to you.<br><br>   
+  C) Our service providers also use cookies that you should be aware of. We use the following service providers to analyse the use of the Services. Each service provider collects information about the Services by means of cookies and this information is used to create reports about usage information. You can find details about the service providers’ privacy policies and practices at the URL links set forth below:<br><br> 
+
+</p>
+
+<p>Google / Google Anaytics		https://support.google.com/analytics/answer/6004245 <br><br>
+
+  https://policies.google.com/privacy<br><br>
+
+Facebook				https://www.facebook.com/privacy/explanation<br><br>
+
+Moralis				https://moralis.io/privacy-policy/<br><br>
+
+Netlify					https://www.netlify.com/privacy	<br><br>
+
+Avalanche				https://www.avax.network/privacy-policy<br><br>
+
+Metamask				https://consensys.net/privacy-policy/<br><br>
+
+Magic Wallet				https://magic.link/legal/privacy-policy<br><br>
+
+Trust Wallet				https://trustwallet.com/privacy-policy<br><br>
+
+Ethereum				https://ethereum.org/en/privacy-policy/<br><br>
+
+D) Management of Cookies. Cookies can be managed in below manner:<br><br>
+
+i) Most browsers allow you to refuse to accept cookies and to delete cookies. The methods for doing so vary from browser to browser, and from version to version.<br>
+ii) Your mobile device and smartphone may allow you to control cookies through its settings function. You should refer to your device manufacturers instructions for more information.<br>
+iii) However, if you choose to decline cookies, some parts of the Services may not work as were intended or may not work at all. 
+Changes to Our privacy Policies<br><br>
+
+As per our policy, we post any changes we make to our Privacy Policy on this page. If we make material changes to how we treat our Users' Personal Information, we will notify you by e-mail to the primary e-mail address provided by you in your account. The date the Policy was last revised is identified at the top of the page. You are responsible for ensuring that we have an updated active and deliverable e-mail address for you. You are also responsible for periodically visiting our Website’s privacy Policy page to check for any changes.<br><br>
+
+<h1>Contact Information</h1>
+
+<b>We will be happy to assist you in case you have any query. Please drop a mail to us at:  info@cryptor.in </b><br>
+<h1>We thank you for your patience in reading our Privacy Policy.</h1></p>
+
+
+    <footer>
+      <div class="footer-content">
+        <div class="social-media-icons">
+          <a class="icon" href="https://twitter.com/CryptoRBharat"><i class="fab fa-twitter"></i></a>
+          <a class="icon" href="https://www.facebook.com/CryptoRBharat"><i class="fab fa-instagram"></i></a>
+          <a class="icon" href="https://www.youtube.com/channel/cryptorbharat"><i class="fab fa-youtube"></i></a>
+          <a class="icon" href="https://discord.gg/h2aFpgHD"><i class="fab fa-discord"></i></a>
+        </div>
+  <div class="links">
+          <a href="https://www.linkedin.com/company/crypto-r">LinkedIn</a>
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="community.html">Community Guidelines</a>
+          <a href="learn.html">FAQs</a>
+        </div>
+
+
+        <div class="company-name">
+          
+          <span>© 2022 Crypto<span id="mint">R</span> All Rights Reserved</span>
+        </div>
+
+      </div>
+    </footer>
+  </body>
+  <script src="assets/js/learn.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/js.cookie.js"></script>
+  <script src="assets/js/connectWallet.js"></script>
+  <script src="assets/js/profile.js"></script>
+
+</html>

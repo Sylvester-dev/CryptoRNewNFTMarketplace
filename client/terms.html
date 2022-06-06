@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style_home.css">
+    <!-- <link rel="stylesheet" href="assets/css/learn.css"> -->
+    <link rel="icon" type="image/png" href="assets/images-icons/CryptoRLogo.png">
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis@0.0.184/dist/moralis.js"></script>
+    <script src="https://kit.fontawesome.com/99c803f139.js" crossorigin="anonymous"></script>
+    <title>CryptoR - Create, buy, and sell digital artwork</title>
+  </head>
+  <body>
+    <div class="main">
+      <header id="header">
+        <nav
+          data-aos="zoom-out"
+          data-aos-delay="800"
+          class="navbar navbar-expand"
+        >
+          <div class="container header">
+            <a class="navbar-brand" href="index.html">
+              <img
+                class="navbar-brand-sticky"
+                src="assets/images-icons/CryptoRLogo.png"
+                alt="CryptoR logo"
+              />
+            </a>
+            <div class="ml-auto"></div>
+            <!-- Navbar -->
+  
+            <ul class="navbar-nav items mx-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="following.html" class="nav-link">Following</a>
+              </li>
+              <li class="nav-item">
+                <a href="academy.html" class="nav-link">Academy</a>
+              </li>
+              <li class="nav-item">
+                <a href="create.html" id="create" class="nav-link">Create</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#"
+                  >Explore <i class="fas fa-angle-down ml-1"></i
+                ></a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="stats.html" class="nav-link">My stats</a>
+                  </li>
+                  <li class="nav-item" id="myProfile">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="edit-profile.html" class="nav-link"
+                      >Edit Profile</a
+                    >
+                  </li>
+                  <li class="nav-item" id="disconnectWalletBtn">
+                    <a class="nav-link">Disconnect wallet</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">Contact</a>
+              </li>
+              <!-- Navbar Action Button -->
+              <ul class="navbar-nav action">
+                <li class="nav-item ml-3" id="connectWalletTag">
+                  <button
+                    type="button"
+                    href="wallet-connect.html"
+                    class="btn ml-lg-auto btn-bordered-white"
+                    id="connectWalletBtn"
+                  >
+                    <i class="icon-wallet mr-md-2"></i>Wallet Connect
+                  </button>
+                </li>
+              </ul>
+            </ul>
+          </div>
+        </nav>
+      </header>
+  
+            <!-- ***** Breadcrumb Area Start ***** -->
+            <section class="breadcrumb-area overlay-dark d-flex align-items-center">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+                    <!-- Breamcrumb Content -->
+                    <div class="breadcrumb-content text-center">
+                      <h2 class="m-0">Terms & Condition</h2>
+                      <ol class="breadcrumb d-flex justify-content-center">
+                        <li class="breadcrumb-item"><a href="index.html">Footer</a></li>
+                        <li class="breadcrumb-item active">Terms</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- ***** Breadcrumb Area End ***** -->
+    <div class="container">
+      <div class="terms-page">
+        <header>
+          <img src="assets/images-icons/CryptoRLogo.png" width="100" height="100" alt="icon to initiate light mode theme">
+          Crypto<span id="mint">R</span>
+          <p class="subheader">The Terms of Use of CryptoRNFT.Com</p>
+        </header>
+        <div class="accordion" id="Terms">
+          
+          <p style="position: relative;">(Last updated on 15.02.2022)</p>
+
+          <h2>Introduction:-</h2>
+
+          <p>The website cryptornft.com and our allied websites cryptor.in, cryptordx.com and our brand name and logo CryptoR are owned by SNS Innovation Labs Pvt. Ltd., henceforth all will be collectively addressed as the “Company” and the terms like We/Us/Our/CryptoR/Websites/Platform/CryptoRNFT.Com/CryptoRDEX.Com should be considered as representing the “Company”.<br><br>
+            All our websites, mobile applications and software should be individually or collectively be termed as the “Platform” and their use should refer to the use of the websites, mobile applications and software individually or collectively.<br><br>
+            Below terms of use, henceforth be referred as the “Terms”, will govern your access and use of company’s websites, including without limitation, the creation, purchase, sale, exchange and/or modification of digital assets through our online websites, mobile applications and/or software provided by us, henceforth collectively referred as the “Services”.<br><br>
+            Anyone who -<br><br>
+            * Accesses, downloads and/or uses any of CryptoR’s websites, mobile applications and/or softwares provided by us, and/or. <br><br>
+            * Creates, rates,  buys, sells, transfers, receives, uses and/or trades  any crypto assets using Company’s website, mobile applications and/or our software, and/or. <br><br>
+            * Is engaged in buying, selling, trading, receiving, transferring and/or using our token CNR, and/or<br><br>
+            * is anyhow associated with us through any or all the above activities on our CryptoRDX system, DAO system and/or is engaged with us through our ICO process (Initial Coin Offering),<br><br>
+            shall be considered as user and henceforth will be referred as the “User” and terms like you/your/yours, wherever necessary, will represent the User. The User of CryptorNFT.Com and its allied websites could be creators, collectors, buyers, sellers, rating specialists, receiver, trader and anyone who is legitimately in possession of the NFTs. <br><br>
+            Such usages of our websites, mobile applications and software by the user shall be referred as the “Use”<br><br>
+            These Terms of the Services between the “Company” and the “User” constitute this agreement between the two, henceforth referred as the “Agreement”. Phrases and/or words like” Agreement, “User Agreement”, “Terms of Use”, “Terms of Services” and/or “Terms” can be used interchangeably to represent the “Agreement”.<br><br>
+            The “Terms of Services” or this “Agreement” allows you to sell, purchase, transfer, receive and/or trade crypto assets vide outright purchase in our specified currency. You may complete such transactions by linking your digital wallet on supported bridge extensions such as Metamask and/or Trust wallet and/or any other digital wallet that the Company may be offering to its Users, that as a digital wallet allows you to purchase, sell, store and be engaged in transactions using our specified cryptocurrency . Before you put your crypto asset for sale, you will be asked by us to download, connect and unlock a supported wallet extension. Upon submitting the order to sell or purchase a unique crypto asset, your order will be passed on the applicable extension and this will complete the transaction on your behalf. <br><br>
+            Crypto assets, here means those unique non-fungible tokens or NFTs that are minted and implemented on Avalanch C Chain using ERC-721 protocol using defined smart contracts. Henceforth, crypto assets and NFTs shall be referred as the “Crypto Assets” or “NFTs” and Avalanche C Chain  will be called as Avalanche.<br><br>
+            CryptoRNFT.Com is a platform that facilitates the transactions between buyer and seller through sales in our specified cryptocurrency and  we are not a party to any agreement between the buyer and the seller of the Crypto Assets or between any Users. Our role is limited to provide administrative facility only.<br><br>
+            Users bear full responsibility towards verifying the identity, legitimacy and authenticity of crypto assets that they purchase on CryptoRNFT.com. We shall entertain no claim with respect to verification, identity, legitimacy and authenticity of buyers, sellers and/or crypto assets.<br><br>
+            Unless the context otherwise requires in this Agreement, any reference in the singular shall include references in the plural and vice versa, and words importing one gender only shall include the other gender. The use of upper case letters and lower case letters in a word shall not affect and alter the meaning and the interpretation of the Terms of Use. <br><br>
+            The headings in this Terms of use are for convenience only and shall not affect their meaning/s and/or interpretation/s.<br><br>
+            Reference to the statutory provisions shall be construed as reference to the statutory provisions of Republic Of India only, unless otherwise specified, including their amendment, modification and re-enactment. <br><br>
+            These terms constitute legal Agreement between the User and the Company and governs your access and Use of the company’s platforms including any content, software, websites, mobile applications, functionality and services offered through us. <br><br>
+            In the unlikely event of a dispute between the company and the user, the decision taken by the company should be final and binding to all.<br><br>
+            Since we are a growing organization and we have growing number of services, at times, we need to describe additional terms of use of our services. These additional terms and conditions related to our services are being made available on our websites and they form the part of your agreement with us, if you choose to use those services. <br><br>
+            We reserve the right to change or modify these terms at any time and at our sole discretion without any notice to you or to anyone else. You agree and understand that by accessing or using our Platform following any changes/revisions/modifications in the terms; you will be accessing and using our platform by agreeing to our new revised terms being mentioned on our websites.<br><br>
+            By clicking on the “I Accept” button to complete the registration process to use our services and/or to purchase, sale, exchange, transfer, receive and trade in crypto assets, you agree to be bound by these Terms of Use and all the Terms being incorporated hereinafter by reference. If you do not agree to these terms, you may refuse to click “I Accept” button and you will not be allowed to use any of our services like purchase, sale, exchange, transfer, receive and trade in crypto assets. <br><br>
+          </p>
+          <h2>Eligibility and Account Registration:-</h2>
+          <p>
+            (A) The company has the sole and absolute discretion to consider your eligibility to have an account on our websites and to allow or disallow opening of your account on our websites and therefore giving you the permission to access our websites. By agreeing to these terms, you agree, represent and warrant that-<br><br>
+            * you are at least 18 years of age,<br><br>
+            * you are entitled with full rights, authority and power to agree and execute the terms of the use of our websites,<br><br>
+            * you are not subject to any financial sanction, embargoes and/or no other restrictive measures has been imposed on you by Republic Of India, United Nations, European Union, European Union Countries, UK Treasury, US Office of Foreign Assets Control (OFAC) and/or any other governmental authority in any jurisdiction in which Company’s platform is available and accessible,<br><br>
+            * you are not a citizen of Belarus, Burma (Myanmar), Central African Republic, Cote d’ Ivory (Ivory Coast), Cuba, Democratic Republic of The Congo, Iran, Iraq, Lebanon, Liberia (Former Liberian Regime of Charles Taylor, Libya, North Korea, Somalia, Sudan, Syria, Zimbabwe,<br><br>
+            * you are not impersonating any other person,<br><br>
+            * you will voluntarily not use any of our platforms, websites, mobile applications and/or software; if any applicable law in your country prohibits you from doing so in accordance with these terms,<br><br>
+            * you will not involve yourself in any criminal activities, drug trade, hacking attempts, cyber attacks, terrorism activities and money laundering activities,<br><br>
+            * you are and you will be compliant with all applicable laws to which you are subjected to,<br><br>
+            * you declare that you have read, understood and agreed to our Privacy Policy and cookie Policy.<br><br>
+            (B) You must create and open an account to use the Services of CryptoRNFT.Com and its allied websites, henceforth referred as the “Account”. You will be required to provide certain information about yourself to open an account on CryptoRNFT.Com and its allied websites. Please note that we may, at our sole discretion, require you to provide further/additional information and/or documents at any stage during your use of the CryptoRNFT.Com. We may, in our sole discretion refuse, decline, suspend and/or disable your access and use of CryptoRNFT.Com Platform.<br><br>
+            (C) You must open an account with us on CryptoRNFT.Com to participate in creating, minting, rating,  buying, selling, transferring, receiving, using and/or trading any Crypto Assets using CryptoRNFT.Com website, its mobile applications and/or related software. By creating an account you agree to provide correct, accurate, current and complete information about yourself. Also, you agree to maintain and update your account information from time to time, as may be necessary. You further agree that you will be responsible for maintaining the security of your password and you accept and understand all risks of unauthorized  access to you account and information provided to us. You are an agreement with us to immediately notify us if you discover, detect or otherwise suspect any security breach related to the services being provided to you or related to your account. We reserve the right of blocking multiple accounts of the same user/s.<br><br>
+            (D) You, also, agree that you will not <br><br>
+            -> create another account if we disable your existing account unless you have written permission from us, <br>
+            -> buy, sell, rent and/or lease access to your account and/or username to anyone else or to any third party in any circumstances,<br>
+            -> share your account password with anyone, and <br>
+            -> log in and/or try to log in to access our services through unauthorized third party applications and/or clients.<br>
+            (E) By creating an Account with us, you consent to receive electronic communications from CryptoRNFT.Com and its allied websites via email or by posting notices to the Service. These communications may include notices about your Account (e.g., password changes and other transactional information) and are part of your relationship with us. You agree that any notices, agreements, disclosures or other communications that we send to you electronically will satisfy any legal communication requirements, including, but not limited to, that such communications be in writing. You should maintain copies of electronic communications from us by printing a paper copy or saving an electronic copy. We may also send you promotional communications via email, including, but not limited to, newsletters, special offers, surveys and other news and information we think will be of interest to you. You may opt out of receiving these promotional emails at any time by following the unsubscribe instructions provided therein.<br>
+            (F) By submitting your personal data through our Webites or Services, you agree to the Terms of our Privacy Policy and you expressly give your consent to the collection, use and disclosures of your personal data in accordance with our privacy policy.<br>
+            (G) You will use your own equipments and services to connect to our websites including mobile phones, laptops, desktops and internet connections and will be solely responsible for the purchase of hardware and internet services in terms of its charges.<br><br>
+          </p>
+          <h2>Your Use of Our CryptoRNFT.Com Platform, and Conduct</h2>
+           <p>Upon opening of your account, we hereby grant you a limited, non-exclusive, non-transferable, non-sublicensable, revocable personal license to access and use our platform, websites and content. We grant this license to you provided you meet following terms and conditions. You hereby undertake that you shall not, knowingly or otherwise, authorize, allow or assist any other party to:-<br>
+            (a) use the CryptoRNFT.Com Platform and allied websites through your account to conduct electronic spamming, unsolicited distribution of promotional material, unauthorized advertising, sending, junk or chain messages,<br>
+            (b) use CryptoRNFT.Com Platform and allied websites through your account to engage to provide any false, inaccurate, or misleading information to the company or to any other individual, group of people and/or organization/s,<br>
+            (c) use CryptoRNFT.Com Platform and allied websites through your account to upload content that is pornographic in nature , hurt religious sentiments , constitutes hate speech, is immoral or illegal, contains or is infected with viruses, malicious codes, Trojan horses or any other harmful or deleterious programme, <br>
+            (d) change, modify or adapt the whole or any part of CryptoRNFT.Com Platform and allied websites through your Account to incorporate the Site into any other programme or application;<br>
+            (e) dis-assemble, de-compile, reverse-engineer or otherwise attempt to derive the source code, object code, underlying concepts, ideas and algorithms or any components thereof on  CryptoRNFT.Com Platform and allied websites through your Account,<br>
+            (f) use CryptoRNFT.Com Platform and allied websites through your Account in any manner that would tantamount to infringement of our, our Affiliates’ or any other third party’s intellectual property rights, including without limitation any copyright, patent and/or trademark. You undertake not to take or attempt to take any action or claim ownership of any property that infringes or would infringe upon our intellectual property interests,<br>
+            (g) use CryptoRNFT.Com Platform and allied websites through your Account, in a way that damaging to our Platform or interfere with other users or affect the reputation of our company,<br>
+            (h) involve yourself in any action to gain or attempt to gain unauthorized access to the account or wallets of other users,<br>
+            (i) take any action that imposes an unreasonable or disproportionately large burden or load on the infrastructure of CryptoRNFT.Com Platform and allied websites including, but without limitation to our servers, networks, data centers and related or like equipment, and detrimentally interfere with, intercept or expropriate any system, data or information belonging to other users of the CryptoRNFT.Com Platform and allied websites,<br>
+            (j) provide false, inaccurate, incomplete or misleading information to CryptoRNFT.Com Platform and allied websites, our affiliates or any third party services providers, and<br>
+            (k) use CryptoRNFT.Com Platform and allied websites through your Account to engage in any lottery, bidding fee auctions, contests, sweepstakes, or other games of chance,<br>
+            (l) use logo, all designs, texts, graphics, pictures, information, data, software, sound files, other files, hereinafter termed as the “Property” through your account on CryptoRNFT.Com or its allied websites. You acknowledge that these are the proprietary property of the Company or of our affiliates, licensors or users, as applicable.<br><br>
+          </p>
+          <h2>Our Intellectual Property Rights & Trademarks:-</h2>
+          <p> As a user of CryptoRNFT.Com and its allied websites, you confirm that you shall not use CryptoRNFT.Com and its allied websites’ logo and any of the Company’s product or service including but not limited to the names, logos, taglines or slogans that may appear on the Platform or the trademarks of the Company or our affiliates must not be copied, imitated, duplicated or used, in whole or in part, without our written permission in advance. You may not use any metatags or other hidden text utilizing CryptoRNFT.Com and its allied websites or any other name, trademark or product or service with the name of CryptoR or our affiliates without our prior written permission. In addition, the look and feel of the Service and Content, including, without limitation, all page headers, custom graphics, button icons and scripts, constitute the service mark, trademark or trade dress of the Company must not be copied, imitated, duplicated or used, in whole or in part, without our advance written permission. All other trademarks, registered trademarks, product names and CryptoRNFT.Com and its allied websites’ names and logos mentioned on the Service are the property of their respective owners and may not be copied, imitated or used, in whole or in part, without the permission of the applicable trademark holder. Reference to any products, services, processes or other information by name, trademark, manufacturer, creator, rating agent/rating agency, supplier or otherwise does not constitute or imply endorsement, sponsorship or recommendation by the Company.<br><br>
+          </p>
+          <h2>Fees & Commissions:-</h2>
+            <p>
+              By creating, buying and selling NFTs on the CryptoRNFT.Com Platform, you agree to pay all applicable fees and commissions as mentioned in our FAQ section and on the checkout screen at the time of your purchase and sale; you authorize CryptoRNFT.Com to automatically deduct payable fees and commissions directly from payments to you and/ or add fees to your payments to CryptoRNFT.Com as applicable. Such fees and commissions cannot be disputed at a later time or date.<br><br>
+            </p>
+            <h2>Pricing of NFTs:-</h2>
+            <p>Users, Creators and Traders are free to put any price of their NFTs. However, they should do so consciously. They will be not be allowed to charge ridiculously low or high prices for their NFTs that may affect the trading on the “Platform”. In such cases the “Company” will intervene and may suggest you to correct the prices and if “Company” finds it necessary then “Company” at its sole discretion may delete or download such NFTs from its “Platform” and may also suspend or terminate your account from the “Website”.<br><br>
+            </p>
+            <h2>Content Creation, Users Content And Rating:-
+            </h2>
+            <p>This agreement grants you limited, non-exclusive, non-transferable, non-sublicensable, revocable personal license to access and use our platform, websites, software and content. This license empowers you to create, buy, sell, rate, transfer, receive and trade crypto assets on our website CryptoRNFT.Com.<br><br>
+              This license allows users to create their account and make their profile by filling information related to themselves, their expertise and their work. You can also mint and display your NFTs on our platform and can put them on sale. All this will be referred as the “User Content”. Right now there will be an outright sale arrangement on our Platform, however, we may consider introducing an auction sale system later. <br><br>
+              All the information posted by you as a user will be considered exclusive to CryptoRNFT.Com and its allied websites till the time it remains listed on our platform and will be treated as non-confidential. By uploading any user content on the platform, you grant us, our affiliates, distributors, partners, respective licensees, successors, and assigns the right to use, change, reproduce, modify, perform, display, distribute, retransmit, publish, transfer, broadcast, and otherwise disclose to third parties all such material for any purpose. You represent and warrant that you own and control all the rights of your User Content and that you have the right to grant such license/s to us, our affiliates, distributors, partners, respective licensees, successors, and assigns, and that all of your User Content do and will comply with these terms. <br><br>
+              You express your understanding and agree that you are fully responsible for any User Content that you submit or contribute, and you, and not CryptoRNFT.Com, have complete responsibility for such content, including its legality, reliability, purpose, accuracy, correctness and appropriateness. We, under any circumstances, are not and shall not be responsible or liable to any third party for the User Content; accuracy, correctness or appropriateness of any User Content posted by you or any other User on our platform.<br><br>
+              If you are the Creator of the User Content, you hereby grant and allow CryptoRNFT.Com the right to use your name and image for marketing or promotional purposes and you agree that we may use or modify content/s from the NFTs that you create for marketing or promotional purposes. You also agree that we have right to use your profile, biography and other public information about you to promote the NFTs that you create or have created. You further agree as a creator that you will not infringe or violate on the intellectual property rights of the others and ours, and will not manipulate pricing of any of the NFTs with other Creators. <br><br>
+              However, we reserve the right, in our absolute sole discretion, to prohibit you from uploading any NFTs to our platform. We are not required to monitor any User Content, but we may in our sole discretion, remove any User Content at any time and for any reason without any notice to the creators. CryptoRNFT.COM may monitor the user content to identify, detect and prevent fraudulent activity or violation of these terms.<br><br>
+              Our Rating Experts will evaluate every NFT displayed on CryptoRNFT.Com. They are doing this job on the request of CryptoRNFT.Com to help, assist and support buyers reach a conclusion. Their rating cannot be challenged anywhere before any authority, whatsoever it may be. Their work is purely to support buyers in taking their buying decision and rating experts’ ratings should not be taken as determinative or decisive for any NFT and is not binding for anyone, as their rating is their individual judgment which reflects their sense of appreciation for any NFT.<br><br>
+<h2>Ownership of Your NFTs:-
+</h2>
+<p>Apart from the content belonging to us, including but not limited to, intellectual property rights, trademarks, logo, copyrights,  taglines, slogan, sound files, website texts, headers and all other relevant information that belongs to us, our affiliates, distributors, partners, respective licensees, successors, and assigns; all other copyrights, trademarks, product names and your logos on the platform, related to and including the NFTs and user content are the property of their respective users and owners and the same may not be copied, imitated, duplicated or used, in whole or in part, by anyone or any other user without the written expressed permission of its owner i.e. owner of all these intellectual properties.<br><br>   
+  Upon purchasing the NFTs on CryptoRNFT.Com, you own the right to keep, sell or give-away those NFTs. Any NFT associated with a sale item allows you the worldwide, perpetual, exclusive, transferable license to use, copy and display that sale item for your NFT as long as you own that NFT. You remain entitled:<br>
+* to use NFT for your own personal and non-commercial purpose,<br>
+* to display and sell your NFT on our platform CryptoRNFT.Com<br>
+* to display and sell the NFT as part of third party website or mobile application that permits the storage, involvement, facilitation and participation of your NFT.<br><br>
+Without limiting the foregoing, in case you find and you believe that a third-party material hosted by some user on CryptoRNFT.Com platform infringes and violates your copyrights, trademark rights and intellectual property rights, you should file a notice to us by contacting us at legal@cryptor.in.<br><br>
+<h2>Reporting Copyright and Intellectual Property Rights Infringement:-
+</h2>
+<p>If you believe that your content has been copied in a way that constitutes copyright infringement and/or intellectual property rights infringement, then you must report this by contacting us at legal@cryptor.in <br><br>
+  Formal infringement claims regarding User Content or the Services must include:<br>
+* A written communication delivered to the above email,<br>
+* A physical or electronic signature of someone authorized to act on behalf of the copyright owner,<br>
+* Identification and marking of the copyrighted work(s) allegedly infringed,<br>
+* Identification and marking of material claimed to be infringing that should be  reasonably sufficient to permit Company to locate the material,<br>
+* Information reasonably sufficient to permit Company to contact the complaining party. This can be an address, phone number, email address, or other suitable method of contact,<br>
+* A statement that the complaining party has a good faith and belief that the use of the material is not authorized by the copyright owner or its any representative, and<br>
+* A statement that the information in the notice is accurate and, under penalty of perjury, that the complaining party is authorized to act as a copyright owner or on behalf of the copyright owner.<br><br>
+</p>
+<h2>Account Closure and termination of the Agreement:-
+</h2>
+<p>We reserve the right, in our sole discretion, to terminate or suspend your access to your account on our platform, use of the platform and/or any of its Content/User Content, and/or close your Account, at any time for any reason, without serving any notice to you.  If, in particular, we suspect that your account is being used for illegal activities, you have concealed or provided false information, you are engaged in fraudulent activities, and/or you have involved in activities that are in violation of these Terms; your account will be suspended, terminated or permanently closed.<br><br>
+</p>
+<h2>Risks Associated While Working on Our Platform:-
+</h2>
+<p>You understand and agree that your access and use of the CryptorNFT.Com Platform is subject to certain risks inclusive of market risks, including without limitation:-<br><br>
+  (a) Prices and liquidity of blockchain assets, including the NFTs, are extremely volatile and may be subject to severe fluctuations,<br>
+  (b) Fluctuations in the price of other digital assets and cryptocurrencies could materially and adversely affect the the prices of NFTs drastically,<br>
+  (c) Introduction of legislative and regulatory framework may alter the scenario and may bring changes or certain actions that may adversely affect the use, transfer, storage, buying, selling and value of the NFTs,<br>
+  (d) Transactions involving NFTs are irreversible and immutable, and losses due to fraudulent or accidental transactions may not be recoverable,<br>
+  (iv) NFTs are not legal tender and are not backed by any government or government laws,<br>
+  (e) The value of NFTs is being derived from the continued willingness of market participants to exchange fiat currency or digital assets for NFTs, and therefore the value of NFTs is subject to the potential for permanent or total loss of value; should the market for NFTs and people’s faith in them disappear,<br>
+  (f) NFTs are subject to the risk of fraud, counterfeiting, cyber attacks, erasing of data and other technological difficulties which may prevent access to or use of your NFTs.<br><br>
+  You acknowledge, understand and agree that you are solely and wholly responsible for determining the nature, potential value, suitability and appropriateness of these risks for yourself. CryptoRNFT.Com does not give any advice or recommendations regarding the NFTs. You understand and agree that you access and use the CryptoRNFT.Com Platform at your own risk. You understand and agree that CryptoRNFT.Com will not be responsible for any communication failures, disruptions, errors, and/or distortions you may experience while using the NFTs or the CryptoRNFT.Com and allied websites.<br><br>
+</p>
+<h2>Limitation of the Services:-
+</h2>
+<p>If the company is holding any funds in your Account and finds that there is no record of your use of the the Company Platforms for several years, we may be required, upon passage of applicable time periods, to report these funds as unclaimed property in accordance with the abandoned property and escheat laws. If such an incident occurs, we will use reasonable efforts to give you written notice. If you fail to respond within fifteen business days of our serving the notice to you or the period as required by Applicable Law, we may be required to deliver any such funds to the applicable jurisdiction as unclaimed property. In such a case, we reserve the right to deduct a reasonable administrative fee from such unclaimed funds, as permitted by Applicable Law.<br><br>
+</p>
+<h2>Limitation Of Liabilities:-
+</h2>
+<p>Under no circumstances and in no event, to the fullest extent permitted by law, the company shall be liable to you or any third party for any loss, lost profit, any indirect, consequential, exemplary, incidental, special or punitive damages arising from these Terms. The Company, its products or any third party websites and their products shall not be liable for any damages related to loss of revenue, loss of profits, loss of business,  or anticipated savings, loss of use, loss of goodwill, or loss of data, and whether caused  by tort, including negligence, breach of contract, or otherwise, even if it was foreseeable and the Company has been advised for the possibility of such damages. It is totally at your will and at your sole discretion and at your risk to access and use the Company’s platform, its products or third part websites and their products. You will be solely and wholly responsible and accountable for any damage to your computer system and/or data resulting therefrom. Notwithstanding anything to the contrary contained herein, in no event, shall the maximum aggregate liability of the company arising out of or in any way related to these Terms, the access and use of the Platform, content NFTs or any other products or services purchased on the Platform exceed US $ 100.00. The foregoing limitations of liability shall not apply to liability of the Company for personal injury caused by the Platform’s negligence or any injury caused by the Platform’s fraud or fraudulent misrepresentation and/or misinterpretation. <br><br>
+</p>
+<h2>Indemnification:-
+</h2>
+<p>To the fullest extent permitted by applicable law, you agree to indemnify, defend and hold harmless CryptoRNFT.Com and its allied websites and our past, present and future employees, officers, directors, partners, consultants, contractors, distributors, equity holders, suppliers, vendors, service providers, parent companies, subsidiaries, agents, affiliates, representatives, predecessors, successors and assigns, individually or collectively being referred as the “Parties”, from and against all actual or alleged third party claims, damages, awards, judgments, losses, liabilities, obligations, penalties, interests, fees, expenses (including without limitation, court costs, costs of settlement and costs of pursuing indemnification and insurance), of every kind and nature whatsoever, whether known or unknown, foreseen or unforeseen, matured or un-matured, or suspected or unsuspected, in law or equity, whether in tort, contract or otherwise, collectively termed as the “Claims”, including but not limited to damage to property or personal injury, that are caused by, arise out of or are related to your use or misuse of the platform, content or NFTs and your breach of these terms and your breach or violations of the rights of a third party, including another user or third party service provider. You agree to promptly notify the company of any third party claims and cooperate with the Parties in defending such claims. You further agree that the Parties shall have control of the defense or settlement of any third part claims.<br><br>
+</p>
+<h1>THIS INDEMNITY IS IN ADDITION TO, AND NOT IN LIEU OF, ANY OTHER INDEMNITIES THAT MAY BE SET FORTH IN A WRITTEN AGREEMENT BETWEEN YOU AND THE COMPANY.
+</h1>
+
+<h2>Taxes:-
+</h2>
+<p>You agree that you are solely and wholly responsible for determining what, if any, taxes apply to your NFT transactions on your NFTs on CryptoRNFT.Com Platform. Neither CryptoRNFT.Com nor any other CryptoRNFT.Com Party is responsible for determining the taxes that may apply to your NFT transactions. You promise to deposit all such taxes to appropriate government authorities as per the prevailing laws of the land.<br><br>
+</p>
+<h2>Privacy Policy:-
+</h2>
+<p>By using the CryptoRNFT.Com Platform, you confirm that you have read and understood our Privacy Policy and have understood how we collect, use, disclose and share your personal data amongst ourselves and disclose such Personal Data to our authorised service providers and relevant third parties. We will only share your Personal Data in order to facilitate and administer your use of the CryptoRNFT.Com Platform or otherwise if required by law. Such data controller will manage and protect your personal data in accordance with all applicable data protection laws. To know full and comprehensive information about when and why we collect personal information about you, how we use it, the conditions under which we may disclose it and how we keep it secure, you may please refer to our Privacy policy, which is accessible at cryptornft.com’s privacy policy section.<br><br> 
+  At any time, we reserve the right to satisfy our internal requirement in relation to your Personal Data. For example, we may request relevant original documents for the purposes of preventing fraud, verifying you KYC adherence, anti-money laundering compliance and to check terrorist financing purposes or other illegal and criminal activities.<br><br>
+</p>
+<h2>Amendments, Modifications, Updations, Alterations and Variations:-
+</h2>
+<p>From time to time these terms may be amended, modified, updated, altered and there may be variation in these terms. Such changes will be posted on the Platform and the revised and new terms will be effective immediately upon their posting to the platform, unless otherwise specified. You are supposed to check this platform and websites regularly to keep yourself updated about our prevalent terms. In addition, we may at any time change, add or remove any feature or functionality on the Platform without any prior notice. By continuing to use the CryptorNFT.Com and its allied websites’ platform and/or websites after any changes that have taken effect, you are indicating and expressing your acceptance to the amended, modified, updated, altered terms on the Platform. If you do not wish to be bound by any such Amendments, Modifications, Updations, Alterations and Variations to these Terms then you should stop using the CryptoRNFT.Com and its allied websites’ Platform immediately. <br><br>
+  Also, we may in our absolute and sole discretion change, update, amend, remove, alter, vary or discontinue any part of the Crypto.Com and its allied websites, their services and the Content at any time without prior notice to you.<br><br>
+</p>
+<h3>Transfer, Assignment and Delegation of License:-
+</h3>
+<p>Unless otherwise specified and stated herein, these Terms, and any rights, obligations and licenses granted hereunder, are limited, revocable, non-exclusive, non-transferable, non-sublicensable and personal to you and therefore it may not be transferred, assigned or delegated by you to any third-party and/or anyone else  without our written consent; but may be transferred, assigned or delegated by us without notice and restriction, including without limitation to any of the entities within the the Company, or to any successor in the interest of any business associated with the CryptoRNFT.Com Platform. Any attempted transfer, assignment and delegation in violation hereof shall be null and void.<br><br>
+</p>
+<h3>Servaribility:-</h3>
+<p>If any provision, term, clause of these Terms is held invalid and/or unenforceable, by any court or administrative body of competent jurisdiction, the invalidity or unenforceability of such provision shall not affect the other provisions of these Terms and all provisions shall not be affected by such invalidity or unenforceability and the Terms and the Agreement shall remain in full force and effect. Such provision will be changed and interpreted to accomplish the objectives of the provision to the greatest extent possible under any Applicable Laws.<br><br>
+</p>
+<h3>No Waiver:-
+</h3>
+<p>These Terms shall not be waived in whole or in part except where it is agreed between and by  the parties in writing.<br>
+  The delay of enforcement or the non-enforcement of any of the terms, clauses and provisions mentioned in these Terms by any party shall not be construed as a waiver of any of the other rights of that party arising out of the breach or any subsequent breach of any of these Terms; and no right, power or remedy conferred upon or reserved for any party in these Terms is exclusive of any other right, power or remedy available to that party and each such right, power or remedy shall be cumulative.<br><br>
+</p>
+<h3>Third Party Rights:-
+</h3>
+<p>Other than the entities within the Company, any person who is not a party to these Terms has absolutely no right to enforce any of these Terms under any circumstances.<br><br>
+</p>
+<h3>Serving of Notices and Communication from Us:-
+</h3>
+<p>By using the CryptoRNFT.Com Platform, you agree that we may serve you notices or other communications, including marketing, relating to your use of the CryptoRNFT.Com Platform electronically, that is-<br>
+  * via email on the e-mail address provided by you in each case,<br>
+  * SMS message and/or telephone call on the mobile phone number and/or the phone number provided by you in each case,<br>
+  * and/or by posting such notices and communications on our Platform. <br><br>
+  For notices served vide email, the date of receipt of the email shall be deemed the date on which such notice is transmitted. However, you will always have the option to unsubscribe from receiving any marketing material from us.<br><br>
+</p>
+<h3>Introduction of Governing Laws and Legislature:-
+</h3>
+<p>Any introduction of governing laws and legislature by the Government of India shall be binding to all the parties and Users associated with the Company, including the Company. Any liability arising in terms of taxation or otherwise and any compliance to be met as per government directive shall be the responsibility of the individual parties and Users; and individual parties and Users will be liable for arranging such payments towards taxation or otherwise to the Government of India, and towards complying all the laws as specified by the Government of India. Under no circumstances, the Company shall be held liable for any payments to the Government of India in the form of taxation or otherwise on behalf of the any party or the User.<br><br>
+  Any unspecified object in the government laws shall be handled with other/related existing legislative and statutory provisions. In case these other/related provisions are not available then the Company, at its sole discretion, may define, articulate, describe, infer, interpret and derive meaning of that unspecified clause, provision and/or the term.  <br><br>
+</p>
+<h3>Entire Agreement:-
+</h3>
+<p>These Terms constitute the entire agreement between the parties it its totality regarding its subject matter and supersedes and invalidates all other prior representations, arrangements, understandings, and agreements relating to the same subject matter, whether oral or in writing, expressed or implied. Each party acknowledges that in agreeing to these Terms it does not rely on any statement, representation, warranty, and/or understanding other than those expressly set out in these Terms. <br><br>
+</p>
+<h3>Good Faith:-
+</h3>
+<p>The Company and The User/s here to undertake with the other to act in the utmost good faith in interpreting and implementing this Agreement and agree to do all activities reasonably within their powers which are necessary or desirable to give effect to the spirit and intent of this Agreement. <br><br>
+</p>
+<h3>Disclaimers:-
+</h3>
+<p>The Users may engage in promotion of their respective User Content, including without limitation their NFTs, through various communications channels such as their social media accounts, Whatsapp and other medium of communications. The Company is not responsible for any such communications and/or promotional activities carried out by the Users and will not be liable to you in relation to any such communications and/or promotional activities.<br><br>
+  You bear absolute responsibility for verifying the identity, legitimacy, and authenticity of assets you purchase on CryptoRNFT.Com platform. Notwithstanding indicators and messages that suggest verification, CryptoRNFT.Com makes no claims about the identity, legitimacy, and/or authenticity of assets on the CryptoRNFT.Com Platform.<br><br>
+  Except as expressly provided to the contrary in writing by CryptoRNFT.Com, the Platform, content contained therein, and the NFTs listed therein are provided on an “as is” and “as available” basis without warranties or conditions of any kind, either expressed or implied. CryptoRNFT.Com and its allied websites and its suppliers make no warranty that the Platform will <br>
+  (a) meet your requirements,<br>
+(b) be available on an uninterrupted, timely, secure, or error-free basis, and <br>
+(c) be accurate, reliable, complete, legal, or safe.<br><br>
+CryptoRNFT.Com will not be liable for any loss of any kind from any action taken or taken in reliance on material or information contained on the Platform. <br><br>
+While CryptoRNFT.Com attempts to make your access to and use of the website and the Platform and its content safe, CryptoRNFT.Com does not represent or warrant that the Site, content, any NFTs listed on the Platform or any other part of the website or CryptoRNFT.Com Platform are free of viruses or other harmful components. We cannot guarantee the security of any data that you disclose online. You acknowledge and accept the inherent security risks of providing information and dealing online over the Internet. We will not be responsible for any breach of security unless it is due to our gross negligence.<br><br>
+We will not be responsible or liable to you for any loss and take no responsibility for, and will not be liable to you for, any use of the NFTs including but not limited to, any losses, damages, or claims arising from: <br><br>
+(a) user error such as if you forget your password(s), incorrect transactions, or mistyped addresses, <br>
+(b) server failure or data loss of any kind,<br>
+(c) erasing of any data from your wallets and/or systems<br>
+(d) corrupted wallet files, and <br>
+(e) loss of NFTs.<br>
+To the fullest extent provided by Law, CryptoRNFT.Com and its allied websites hereby disclaims all warranties of any kind, whether expressed or implied, statutory or otherwise, including but not limited to any warranties of merchantability fitness for a particular purpose, title and non-infringement as to the Platform and Content contained therein. The foregoing does not affect any warranties that cannot be excluded or limited under applicable laws. <br><br>
+</p>
+<h3>Language of the Agreement:-
+</h3>
+<p>These Terms are concluded in the English language and all communications including any notices or information being transmitted shall be in English language only. In the event that these Terms or any part of it is translated (for any proceedings, for your convenience or otherwise) into any other language, the English language text of these Terms shall prevail and be binding.<br><br>
+</p>
+<h3>Dispute Resolution:-
+</h3>
+<p>In the event of any dispute between or difference arising at any time between the Company and the User/s hereto as to the construction, meaning, interpretation, inference and/or effect of this agreement or any clause or thing contained herein or the rights, duties, liabilities and obligations to the Company and the User/s hereto, the first endeavour should be to resolve the same amicably through negotiations between two of them.<br><br>
+  In the event that dispute is not resolved by the means of negotiations within a period of thirty (30) days or in such different period as is agreed between the Company and the User/s, such dispute shall then be attempted to be resolved through Arbitration only. The company reserves the right to appoint the sole arbitrator for the dispute and the decision of the arbitrator shall be final and binding, and it should be beyond to be challenged by the company and the User/s. The venue of arbitration procedure should be Noida, UP, India and the language of arbitration shall be English only. <br><br>
+  </p>
+  <h3>Force Majeure:-
+  </h3>
+  <p>Neither the company nor the User/s shall be liable by reason of failure or delay in the performance of their obligation under this Agreement or part of it if such failure or delay is caused by Force Majeure. In this clause, Force majeure means an exceptional event or circumstance:<br>
+   * which is beyond the control of the Company and the User/s,<br>
+* which either of them could not reasonably have provided against, before entering into the Agreement,<br>
+* which having arisen, either of them could not reasonably have avoided or overcome, and<br>
+* which is not substantially attributed<br><br>
+Force majeure includes, but is not limited to, exceptional events or circumstances of the kind listed in the following lines or any combination of the same, so long as conditions to the same are satisfied. These circumstances could be of war, hostilities, invasion, embargoes, sanctions, blockades, act of terrorism, civil war, riot, commotion, disorder, explosions, strike, lockout, natural catastrophe like earthquakes, landslides, hurricane, fires, floods, radio activity and all the other activities that are beyond the control of humans.<br>
+
+
+  </p>
+    <!--====== Footer Area Start ======-->
+    <footer class="footer-area">
+      <!-- Footer Top -->
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-lg-3 res-margin">
+              <!-- Footer Items -->
+              <div class="footer-items">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                  <img src="assets/images-icons/CryptoRLogo.png" alt="" />
+                </a>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Quis non, fugit totam vel laboriosam vitae.
+                </p>
+                <!-- Social Icons -->
+                <div class="social-icons d-flex">
+                  <a class="facebook" href="#">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a class="twitter" href="#">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a class="google-plus" href="#">
+                    <i class="fab fa-google-plus-g"></i>
+                    <i class="fab fa-google-plus-g"></i>
+                  </a>
+                  <a class="vine" href="#">
+                    <i class="fab fa-vine"></i>
+                    <i class="fab fa-vine"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 res-margin">
+              <!-- Footer Items -->
+              <div class="footer-items">
+                <!-- Footer Title -->
+                <h4 class="footer-title">Useful Links</h4>
+                <ul>
+                  <li><a href="#">All NFTs</a></li>
+                  <li><a href="#">How It Works</a></li>
+                  <li><a href="#">Create</a></li>
+                  <li><a href="#">Explore</a></li>
+                  <li><a href="#">Privacy &amp; Terms</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 res-margin">
+              <!-- Footer Items -->
+              <div class="footer-items">
+                <!-- Footer Title -->
+                <h4 class="footer-title">Community</h4>
+                <ul>
+                  <li><a href="#">Help Center</a></li>
+                  <li><a href="#">Partners</a></li>
+                  <li><a href="#">Suggestions</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Newsletter</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <!-- Footer Items -->
+              <div class="footer-items">
+                <!-- Footer Title -->
+                <h4 class="footer-title">Subscribe Us</h4>
+                <!-- Subscribe Form -->
+                <div class="subscribe-form d-flex align-items-center">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="info@yourmail.com"
+                  />
+                  <button type="submit" class="btn">
+                    <i class="icon-paper-plane"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <!-- Copyright Area -->
+              <div
+                class="copyright-area d-flex flex-wrap justify-content-center justify-content-sm-between text-center py-4"
+              >
+                <!-- Copyright Left -->
+                <div class="copyright-left">
+                  &copy;2022 CryptoR All Rights Reserved
+                </div>
+                <!-- Copyright Right -->
+                <div class="copyright-right">
+                  Made with <i class="fas fa-heart"></i> By
+                  <a href="#">cryptoR</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+            <!--====== Scroll To Top Area Start ======-->
+            <div id="scroll-to-top" class="scroll-to-top">
+              <a href="#header" class="smooth-anchor">
+                <i class="fas fa-arrow-up"></i>
+              </a>
+            </div>
+            <!--====== Scroll To Top Area End ======-->
+    </div>
+     <!-- ***** All jQuery Plugins ***** -->
+
+    <!-- jQuery(necessary for all JavaScript plugins) -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap js -->
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+    <!-- Plugins js -->
+    <script src="assets/js/vendor/all.min.js"></script>
+    <script src="assets/js/vendor/slider.min.js"></script>
+    <script src="assets/js/vendor/countdown.min.js"></script>
+    <script src="assets/js/vendor/shuffle.min.js"></script>
+
+    <!-- Active js -->
+    <script src="assets/js/main.js"></script>
+  </body>
+  <script src="assets/js/learn.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/js.cookie.js"></script>
+  <script src="assets/js/connectWallet.js"></script>
+  <script src="assets/js/profile.js"></script>
+
+</html>

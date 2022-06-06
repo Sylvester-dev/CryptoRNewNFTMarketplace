@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="assets/css/style_home.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images-icons/CryptoRLogo.png"
+    />
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis@0.0.184/dist/moralis.js"></script>
+    <script
+      src="https://kit.fontawesome.com/99c803f139.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>CryptoR - Create, buy, and sell digital artwork</title>
+  </head>
+  <body>
+    <div class="main">
+      <header id="header">
+        <nav
+          data-aos="zoom-out"
+          data-aos-delay="800"
+          class="navbar navbar-expand"
+        >
+          <div class="container header">
+            <a class="navbar-brand" href="index.html">
+              <img
+                class="navbar-brand-sticky"
+                src="assets/images-icons/CryptoRLogo.png"
+                alt="CryptoR logo"
+              />
+            </a>
+            <div class="ml-auto"></div>
+            <!-- Navbar -->
+
+            <ul class="navbar-nav items mx-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="following.html" class="nav-link">Following</a>
+              </li>
+              <li class="nav-item">
+                <a href="academy.html" class="nav-link">Academy</a>
+              </li>
+              <li class="nav-item">
+                <a href="create.html" id="create" class="nav-link">Create</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#"
+                  >Explore <i class="fas fa-angle-down ml-1"></i
+                ></a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="stats.html" class="nav-link">My stats</a>
+                  </li>
+                  <li class="nav-item" id="myProfile">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="edit-profile.html" class="nav-link"
+                      >Edit Profile</a
+                    >
+                  </li>
+                  <li class="nav-item" id="disconnectWalletBtn">
+                    <a class="nav-link">Disconnect wallet</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">Contact</a>
+              </li>
+              <!-- Navbar Action Button -->
+              <ul class="navbar-nav action">
+                <li class="nav-item ml-3" id="connectWalletTag">
+                  <button
+                    type="button"
+                    href="wallet-connect.html"
+                    class="btn ml-lg-auto btn-bordered-white"
+                    id="connectWalletBtn"
+                  >
+                    <i class="icon-wallet mr-md-2"></i>Wallet Connect
+                  </button>
+                </li>
+              </ul>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <!-- ***** Breadcrumb Area Start ***** -->
+      <section class="breadcrumb-area overlay-dark d-flex align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <!-- Breamcrumb Content -->
+              <div class="breadcrumb-content text-center">
+                <h2 class="m-0">cryptoR Academy</h2>
+                <ol class="breadcrumb d-flex justify-content-center">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item active">Academy</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Breadcrumb Area End ***** -->
+
+      <!-- ***** Help Center Area Start ***** -->
+      <section class="help-center-area">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-7">
+              <!-- Intro -->
+              <div class="intro text-center">
+                <span>Help Center</span>
+                <h3 class="mt-3 mb-0">How can we help you?</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Laborum obcaecati dignissimos quae quo ad iste ipsum officiis
+                  deleniti asperiores sit.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center items">
+            <div class="col-12 col-md-6 col-lg-4 item">
+              <!-- Help Card -->
+              <div class="card help-card">
+                <a class="d-block text-center" href="#">
+                  <i class="icon icon-plane text-effect"></i>
+                  <h4>Getting Started</h4>
+                  <p>
+                    Learn how to create an account, set up your wallet, and what
+                    you can do on NetStorm
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 item">
+              <!-- Help Card -->
+              <div class="card help-card">
+                <a class="d-block text-center" href="#">
+                  <i class="icon icon-note text-effect"></i>
+                  <h4>Creating</h4>
+                  <p>
+                    Learn how to create your very first NFT and how to create
+                    your NFT collections so you can begin selling and sharing
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 item">
+              <!-- Help Card -->
+              <div class="card help-card">
+                <a class="d-block text-center" href="#">
+                  <i class="icon icon-handbag text-effect"></i>
+                  <h4>Buying</h4>
+                  <p>
+                    Learn how to purchase your first NFT and understand gas fees
+                    and what's gas free on NetStorm
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 item">
+              <!-- Help Card -->
+              <div class="card help-card">
+                <a class="d-block text-center" href="#">
+                  <i class="icon icon-chart text-effect"></i>
+                  <h4>Selling</h4>
+                  <p>
+                    Learn how list your NFTs for sale and understand the
+                    different ways to list your NFTs
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 item">
+              <!-- Help Card -->
+              <div class="card help-card">
+                <a class="d-block text-center" href="#">
+                  <i class="icon icon-link text-effect"></i>
+                  <h4>Partners</h4>
+                  <p>
+                    Learn how you can partner with us to showcase your NFT drops
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 item">
+              <!-- Help Card -->
+              <div class="card help-card">
+                <a class="d-block text-center" href="#">
+                  <i class="icon icon-flag text-effect"></i>
+                  <h4>Developers</h4>
+                  <p>
+                    Learn how you can develop with NetStorm &amp; sell them on
+                    Marketplace
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Help Center Area End ***** -->
+
+      <!-- ***** FAQ Area Start ***** -->
+      <section class="faq-area pt-0">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-7">
+              <!-- Intro -->
+              <div class="intro text-center">
+                <span>FAQ</span>
+                <h3 class="mt-3 mb-0">Frequently Asked Questions</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Laborum obcaecati dignissimos quae quo ad iste ipsum officiis
+                  deleniti asperiores sit.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <!-- FAQ Content -->
+              <div class="faq-content">
+                <!-- Netstorm Accordion -->
+                <div class="accordion" id="netstorm-accordion">
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-md-10">
+                      <!-- Single Accordion Item -->
+                      <div class="single-accordion-item p-3">
+                        <!-- Card Header -->
+                        <div class="card-header bg-inherit border-0 p-0">
+                          <h2 class="m-0">
+                            <button
+                              class="btn d-block text-left w-100 py-4"
+                              type="button"
+                              data-toggle="collapse"
+                              data-target="#collapseOne"
+                            >
+                              What are NFTs?
+                            </button>
+                          </h2>
+                        </div>
+                        <div
+                          id="collapseOne"
+                          class="collapse show"
+                          data-parent="#netstorm-accordion"
+                        >
+                          <!-- Card Body -->
+                          <div class="card-body py-3">
+                            Non-fungible tokens or NFTs are those digital assets
+                            that symbolize real world objects like a piece of
+                            music, art, videos, text, games or even software.
+                            These NFTs are bought and sold online through
+                            cryptocurrencies. Their encryption is almost on the
+                            same lines of a cryptocurrency. These NFTs are
+                            present in the market place since 2014 but it is of
+                            late gaining attention of buyers and sellers in form
+                            of digital arts. NFTs are mostly unique – one of its
+                            own kind. These have unique identifying codes or
+                            unique identifiers. NFTs exist on blockchains which
+                            is a decentralized public ledger where all the
+                            records relating to a particular NFT is maintained.
+                            NFTs are non-fungible meaning that these are unique.
+                            What does this mean? This means that NFTs cannot be
+                            replaced with something else. Fungible items are
+                            equal in value. For example a rupee is fungible. One
+                            may exchange it for another one rupee anywhere in
+                            Bharat. A Bitcoin is also fungible and can be traded
+                            with another Bitcoin on the blockchain. Fungible
+                            nature of cryptocurrencies makes it a trusted means
+                            of conducting transaction on the blockchain. But one
+                            cannot trade an NFT with some other NFT because both
+                            of those will be unique and will be carrying
+                            different values. Besides, NFTs cannot be traded in
+                            fractions like Bitcoin or other cryptocurrencies.
+                            NFTs are bought and sold in its whole unit. One
+                            cannot buy or sell a fraction of an artwork, a
+                            music, a video or a game. This is one important
+                            difference that NFTs have with their crypto assets
+                            counterparts and that is the reason they have been
+                            classified as non-fungible. NFTs have their own
+                            digital signatures and that makes them unique. It
+                            can be compared with an autographed or signed
+                            artwork of an artist. Such physical objects will be
+                            unique and so are these NFTs. Due to this unique
+                            identifier every NFT is different and is one of its
+                            own kind. This is the reason that they cannot be
+                            exchanged or traded with any other NFT. We can
+                            understand this from a real life example. The video
+                            ‘Nyan Cat' was sold for almost 0.6 Million US
+                            Dollars whereas another artwork ‘Everydays - The
+                            First 5000 Days' was sold for 69 Million US Dollars.
+                            Now, these two NFTs cannot be exchanged or traded
+                            with one another, though both of them are NFTs.
+                            Hence all NFTs are unique and non-fungible. Also, at
+                            one point in time one NFT will have only one owner,
+                            unless and until there are exceptions applied.
+                            <a
+                              target="_blank"
+                              href="https://medium.com/geekculture/what-are-nfts-the-collectible-crypto-token-explained-ddd8a49e359b#:~:text=A%20non%2Dfungible%20token%20(NFT,versions%20of%20real%2Dworld%20assets."
+                              >here.</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Single Accordion Item -->
+                      <div class="single-accordion-item p-3">
+                        <!-- Card Header -->
+                        <div class="card-header bg-inherit border-0 p-0">
+                          <h2 class="m-0">
+                            <button
+                              class="btn d-block text-left w-100 collapsed py-4"
+                              type="button"
+                              data-toggle="collapse"
+                              data-target="#collapseTwo"
+                            >
+                              What all constitute NFTs and how does these work?
+                            </button>
+                          </h2>
+                        </div>
+                        <div
+                          id="collapseTwo"
+                          class="collapse"
+                          data-parent="#netstorm-accordion"
+                        >
+                          <!-- Card Body -->
+                          <div class="card-body py-3">
+                            NFTs are created or minted from digital objects that
+                            represent both tangible items as well as intangible
+                            items. NFTs are similar to the physical collector's
+                            items. The only difference is that these are in
+                            digital form. NFTs provide exclusive ownership
+                            rights that are verifiable on blockchain. Mostly,
+                            NFTs will have only one owner at a time. Artists can
+                            sign their artwork by including their signature in
+                            the metadata of an NFT. The owner and creator of the
+                            NFT can store all possible relevant information in
+                            the NFT.<br />
+                            Below is list of items that could be put under
+                            NFT:-<br />
+                            * Artwork<br />
+                            * GIFs<br />
+                            * Videos<br />
+                            * Games<br />
+                            * Sports highlights<br />
+                            * Video game skins<br />
+                            * Video game avtars<br />
+                            * Music<br />
+                            * Books<br />
+                            * Collectibles<br />
+                            * Digital copies of famous arts (subject to
+                            copyright)<br />
+                            * An autographed cover-page of a book<br />
+                            * Text<br />
+                            * Text with signature<br />
+                            * A concert ticket <br />
+                            * Domain name<br />
+                            * Designer fabrics<br />
+                            * JPEGs<br />
+                            * Advertising and personal data management<br />
+                            * Real Estate<br />
+                            * Investments and collaterals<br />
+
+                            This list could be endless. You may think of
+                            anything that can be converted into a digital form
+                            and that can be your unique NFT. One may consider
+                            converting one's marriage invitation card into an
+                            NFT as well. There could be numerous examples by
+                            which an NFT can be minted. As long as one is able
+                            to find a customer or an appreciator for one's
+                            digital work, each and every thing on this Earth is
+                            a potential NFT. That is the power of NFT.
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Single Accordion Item -->
+                      <div class="single-accordion-item p-3">
+                        <!-- Card Header -->
+                        <div class="card-header bg-inherit border-0 p-0">
+                          <h2 class="m-0">
+                            <button
+                              class="btn d-block text-left w-100 collapsed py-4"
+                              type="button"
+                              data-toggle="collapse"
+                              data-target="#collapseThree"
+                            >
+                              How NFTs are helpful in different domains?
+                            </button>
+                          </h2>
+                        </div>
+                        <div
+                          id="collapseThree"
+                          class="collapse"
+                          data-parent="#netstorm-accordion"
+                        >
+                          <!-- Card Body -->
+                          <div class="card-body py-3">
+                            The use of any technology is in helping people.
+                            Blockchain technology can be extended to help
+                            artists and content creators in monetizing their
+                            work. With the help of the technology artists may
+                            interact with their customers and clients directly.
+                            They no longer need to depend on auction houses and
+                            art galleries. They can create, display and sell
+                            their unique NFTs directly to the customers without
+                            having any intermediary in-between. They may display
+                            all the relevant information about their NFT and all
+                            the records of the transactions will be recorded on
+                            the decentralized ledger on the blockchain. The
+                            creators get instant payment and they need not to
+                            wait for an endless time following up for their
+                            rightful money.<br />
+                            NFTs can be stored as an asset that may have
+                            potential to give higher returns on it with the
+                            passage of time. The way one invests into gold,
+                            stock market, mutual funds and cryptocurrencies for
+                            higher returns in future; one may invest in NFTs
+                            also in an anticipation of higher returns into
+                            it.<br />
+                            In fashion industry, a user or a potential customer
+                            may have all the information related to any apparel,
+                            if that apparel in on blockchain in form of an NFT.
+                            Customer may know anything and everything from the
+                            ownership information of the items to accessories
+                            being offered with the item. Customer may know the
+                            value addition done at every stage of the supply
+                            chain and will be aware of the people behind it and
+                            what is their contribution?<br />
+                            Verification of licenses and certification such as
+                            degrees or diplomas will be another use of NFTs.
+                            This will save lot of time and will take away burden
+                            from employees in checking, verifying and
+                            maintaining such records in universities, colleges
+                            and in other such institutions. By using NFT
+                            functionalities on the blockchain the process will
+                            be eased out and will be available for verification
+                            on distributed ledger for everyone.<br />
+                            The domain of advertising will witness lot of
+                            changes. There will be no need of tracking people's
+                            behaviour through social media. People will tell
+                            their interest themselves on the blockchain and they
+                            will be fed relevant information accordingly. It
+                            will save lot of money that is being spent
+                            unnecessarily on finding consumer inclination and
+                            this money can be deployed for consumer benefit in a
+                            better fashion.<br />
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Single Accordion Item -->
+                      <div class="single-accordion-item p-3">
+                        <!-- Card Header -->
+                        <div class="card-header bg-inherit border-0 p-0">
+                          <h2 class="m-0">
+                            <button
+                              class="btn d-block text-left w-100 collapsed py-4"
+                              type="button"
+                              data-toggle="collapse"
+                              data-target="#collapseFour"
+                            >
+                              How are Artworks used as NFTs?
+                            </button>
+                          </h2>
+                        </div>
+                        <div
+                          id="collapseFour"
+                          class="collapse"
+                          data-parent="#netstorm-accordion"
+                        >
+                          <!-- Card Body -->
+                          <div class="card-body py-3">
+                            NFT marketplace is a great place to showcase one's
+                            creativity of different kinds of artworks. One may
+                            display and sell one's artwork in the form of 2D
+                            paintings, 3D paintings, digital paintings, other
+                            types of paintings, videos, photos, GIFs and other
+                            modular arts. One just needs to covert one's art
+                            into digital form and then upload the same on the
+                            marketplace after minting it.<br />
+                            One can express any idea into digital form and can
+                            manifest one's creativity before the world.
+                            CryptoRNFT marketplace supports all such ideas,
+                            art-forms and their creators in demonstrating their
+                            skills in this domain.<br />
+                            Artworks are the most sought after collectables on
+                            marketplace. Their demand is pretty good and is
+                            increasing at a fast pace. They present a great
+                            opportunity for monetisation on CryptoRNFT
+                            marketplace. Our unique rating system provides
+                            strength to every NFT on our marketplace for their
+                            creators. Nonetheless, ratings of the NFTs help
+                            buyers in their decision making process. Ratings
+                            endorse their decisions to buy a particular NFT at
+                            our marketplace.<br />
+                            Our unique rating feature actually works as a
+                            support to buyers and creators both. It helps
+                            creators in optimising their artworks offer pricing
+                            based on the ratings. Creators can evaluate their
+                            artwork amongst so many other artworks and can price
+                            it accordingly. At the same time, buyers can also
+                            estimate an artwork's likely pricing on the basis of
+                            the ratings. This way, this rating system creates a
+                            win-win situation for both.<br />
+                            If you are passionate for your art, we are the
+                            marketplace to help you put your artwork on sales
+                            for buyers. Just prepare your work in digital format
+                            and mint it to showcase it to the world. Who knows
+                            you could be the next millionaire!<br />
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Single Accordion Item -->
+                      <div class="single-accordion-item p-3">
+                        <!-- Card Header -->
+                        <div class="card-header bg-inherit border-0 p-0">
+                          <h2 class="m-0">
+                            <button
+                              class="btn d-block text-left w-100 collapsed py-4"
+                              type="button"
+                              data-toggle="collapse"
+                              data-target="#collapseFive"
+                            >
+                              How are NFTs helpful in creating Music ?
+                            </button>
+                          </h2>
+                        </div>
+                        <div
+                          id="collapseFive"
+                          class="collapse"
+                          data-parent="#netstorm-accordion"
+                        >
+                          <!-- Card Body -->
+                          <div class="card-body py-3">
+                            Yes, you can convert your piece of music into an NFT
+                            and can monetise the same. Music is considered to be
+                            a wonderful collectable item for NFT lovers. Those
+                            musicians who are aware of electronic music form a
+                            wonderful NFT music community and are doing pretty
+                            well for themselves. They are techno savvy and are
+                            using technology in their music and are equally tech
+                            savvy to convert their music into NFTs.<br />
+                            You could be a singer, guitarist, pianist, drummer,
+                            key board player or band owner; NFTs are for
+                            everyone. The only qualification you should have is
+                            that you should know to convert your music into
+                            digital format and should be aware of some digital
+                            mixing; your music NFT is ready to be uploaded on
+                            our NFT platform. <br />
+                            Music NFTs give you a chance to present your music
+                            before people even if you are not connected to the
+                            music world. Electronic music production is a boon
+                            for such artists. NFT marketplace entitles you to
+                            earn name, fame and wealth. All you need is the
+                            faith in your music and you are through.<br />
+                            When it comes to music NFTs, it is not the
+                            prerogative of musicians and singers only. Any
+                            common man can create his own music NFT. If you are
+                            a poet and are good at reciting, just recite a few
+                            lines of your poetry and convert that into NFT.
+                            CryptoRNFT.Com is promoting what we term as 'NFT
+                            Poetry'. You should select some good lines of your
+                            poetry and should video-shoot it or make a video
+                            with some graphics or other inputs to make an NFT
+                            out of it. You may recite someone else's poetries
+                            also, if you own the copyright of the same or it is
+                            outside the purview of copyright.<br />
+                            If you cannot find a suitable poem, you can read
+                            short stories also with its graphical depiction on
+                            the background to make it more attractive. If you
+                            are not able to find out a short story, you can
+                            choose some good quotes that you can convert into
+                            NFT. What it means is that you should have an idea
+                            with you to be converted into NFT, and that's it.<br />
+                            In all, music NFTs are on growth path and they will
+                            expand their wings in a year or two to scale new
+                            heights. The way we see artworks flooded in NFT
+                            marketplace, soon we will see half of the space
+                            being captured by music NFTs. Indeed, it will be so
+                            interesting to see that.<br />
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Single Accordion Item -->
+                      <div class="single-accordion-item p-3">
+                        <!-- Card Header -->
+                        <div class="card-header bg-inherit border-0 p-0">
+                          <h2 class="m-0">
+                            <button
+                              class="btn d-block text-left w-100 collapsed py-4"
+                              type="button"
+                              data-toggle="collapse"
+                              data-target="#collapseFive"
+                            >
+                              Can I publish my book through NFT?
+                            </button>
+                          </h2>
+                        </div>
+                        <div
+                          id="collapseFive"
+                          class="collapse"
+                          data-parent="#netstorm-accordion"
+                        >
+                          <!-- Card Body -->
+                          <div class="card-body py-3">
+                            Yes, publishing industry is going to witness a great
+                            change in form of NFTs. You need not to run after a
+                            publisher for days, weeks and months. Those days are
+                            gone. Now, you can publish your book anytime you
+                            want. You just have to convert your book into a
+                            digital format and then you have to mint it. That's
+                            it! Your book is published. This way you save a lot
+                            of cost on publishing your book. You can invite your
+                            readers to showcase your books. The big advantage is
+                            that you can control the number of copies being
+                            published for your book. You can publish limited
+                            edition autographed copies of your book as well.<br />
+                            Another big advantage is that now you are in control
+                            of your money receipts. You need not to wait for
+                            your royalty cheques anymore. It will be credited to
+                            your account instantly the moment someone buys your
+                            book. If you choose the option of resale commission
+                            during the process minting then you will be entitled
+                            to receive commission on every resale of your book
+                            as well.<br />
+                            NFTs are going to revolutionise publishing industry.
+                            It will provide a lot of flexibility to you for
+                            printing your books. It will give you freedom to
+                            publish your book in different languages. You just
+                            have to arrange a translator. You can publish your
+                            book in any language without worrying for minimum
+                            number of copies to print.<br />
+                            If you have a story, novel, autobiography, drama,
+                            poem, essay collection, shayri collection,
+                            travelogue or you have a flair for describing
+                            nature, mountains, rivers, oceans, forests, flowers
+                            and human emotions in prose or poetry; we have a
+                            great opportunity waiting for you. Put your piece of
+                            literature on our marketplace and mint it for people
+                            visiting us. Who knows yours is the next best
+                            seller!<br />
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Single Accordion Item -->
+                      <div class="single-accordion-item p-3">
+                        <!-- Card Header -->
+                        <div class="card-header bg-inherit border-0 p-0">
+                          <h2 class="m-0">
+                            <button
+                              class="btn d-block text-left w-100 collapsed py-4"
+                              type="button"
+                              data-toggle="collapse"
+                              data-target="#collapseFive"
+                            >
+                              Is there any chance that I lose my NFT?
+                            </button>
+                          </h2>
+                        </div>
+                        <div
+                          id="collapseFive"
+                          class="collapse"
+                          data-parent="#netstorm-accordion"
+                        >
+                          <!-- Card Body -->
+                          <div class="card-body py-3">
+                            Your NFT carries value. It is not a worthless
+                            object. It has value and therefore you must take all
+                            the precaution that you normaly take to keep your
+                            valuables safe. Your NFTs are stored in your wallet
+                            and you have to be cautious for its safety. In the
+                            event a blockchain is hacked, you can lose your
+                            NFTs. There are possibilities that you may lose your
+                            NFTs and hence you should take all precaution to
+                            keep it safe. Our NFT marketplace is on Binance
+                            Smart Chain and it follows BEP 1155 protocol. You
+                            should try to get some knowledge about this
+                            protocol, blockchain technology, smart contracts and
+                            some other aspects to understand its functions.<br />
+                            Here are some of the safety measures that you should
+                            adopt to keep your NFTs safe.<br />
+                            * You should not try to transfer your NFTs from a
+                            wallet to another wallet that doesn't support your
+                            NFTs token standards.<br />
+                            * You may be a victim of a scam or fraud, so be
+                            alert.<br />
+                            * If you give malicious smart contract permission to
+                            access your wallet, it may take away all your crypto
+                            assets including your NFTs.<br />
+                            * You should interact smart contracts of reputed
+                            blockchain projects.<br />
+                            * You should protect your wallet's mnemonic by
+                            keeping it in a safe place after installing metamas.
+                            k<br />
+                            * You should carefully see all the rules of the
+                            game, if you are playing one.<br />
+                            * You should be careful that you do not delete,
+                            intentionally or accidently, the assets in your
+                            wallet.<br />
+                            However, there are enough safety measures and
+                            practices followed by various service providers so
+                            that your chances of losing NFTs are minimal, but
+                            yes the possibility always exists due to your own
+                            mistake or due to some other reason. So, the saying
+                            'prevention is better than cure', fits here.<br />
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Single Accordion Item -->
+                      <div class="single-accordion-item p-3">
+                        <!-- Card Header -->
+                        <div class="card-header bg-inherit border-0 p-0">
+                          <h2 class="m-0">
+                            <button
+                              class="btn d-block text-left w-100 collapsed py-4"
+                              type="button"
+                              data-toggle="collapse"
+                              data-target="#collapseFive"
+                            >
+                              What are Wallets? Do I have to have a Wallet to
+                              deal in NFTs?
+                            </button>
+                          </h2>
+                        </div>
+                        <div
+                          id="collapseFive"
+                          class="collapse"
+                          data-parent="#netstorm-accordion"
+                        >
+                          <!-- Card Body -->
+                          <div class="card-body py-3">
+                            Digital wallets are those wallets that store digital
+                            assets. Digital wallet can be defined as a software
+                            programme that stores and allows transactions of
+                            digital assets. These wallets are protected through
+                            a private key and this key ensures ownership of the
+                            crypto assets in the wallet to its owner.<br />
+                            This private key allows the owner of the digital
+                            wallet to access his digital assets. This key uses
+                            sophisticated encryption and is integral part of
+                            cryptocurrencies and its security makeup. It
+                            consists of a series of alpha-numeric characters
+                            that makes it very difficult for a hacker to
+                            actually break it. This key is very crucial in
+                            depositing and withdrawing crypto assets from the
+                            digital wallets. Upon initiating a transfer from the
+                            wallet, wallet software creates a digital signature
+                            with this private key while processing the
+                            transaction. This helps in maintaining the security
+                            and in generating a valid signature. Even the
+                            slightest of the alteration in the transaction will
+                            change the digital signature that will cancel the
+                            transaction and then a fresh validation will be
+                            needed. It is extremely important that this private
+                            key is kept secretly and safely. If one loses this
+                            private key, one loses all his access to his crypto
+                            assets.<br />
+                            These wallets help in updating the transactions on
+                            the blockchain's distributed ledger. Digital wallets
+                            help in completing the creation, minting, purchase
+                            and sale process of your NFTs and other crypto
+                            assets very quickly and record them in real time.
+                            Digital wallets make it easy to securely manage and
+                            maintain one's crypto portfolio. Digital wallets can
+                            be used to store all sort of crypto assets including
+                            NFTs.<br />
+                            Cryptocurrency is a high value target for hackers
+                            and therefore it is important to store crypto assets
+                            safely. You should choose a wallet based on your
+                            requirements and you must handle it carefully to
+                            prevent any loss of data. Wallets are stores of your
+                            crypto assets to facilitate transactions and
+                            therefore its proper maintenance and increased
+                            awareness towards its security is a must.<br />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** FAQ Area End ***** -->
+
+      <!--====== Footer Area Start ======-->
+      <footer class="footer-area">
+        <!-- Footer Top -->
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-lg-3 res-margin">
+                <!-- Footer Items -->
+                <div class="footer-items">
+                  <!-- Logo -->
+                  <a class="navbar-brand" href="index.html">
+                    <img src="assets/images-icons/CryptoRLogo.png" alt="" />
+                  </a>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Quis non, fugit totam vel laboriosam vitae.
+                  </p>
+                  <!-- Social Icons -->
+                  <div class="social-icons d-flex">
+                    <a class="facebook" href="#">
+                      <i class="fab fa-facebook-f"></i>
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="twitter" href="#">
+                      <i class="fab fa-twitter"></i>
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="google-plus" href="#">
+                      <i class="fab fa-google-plus-g"></i>
+                      <i class="fab fa-google-plus-g"></i>
+                    </a>
+                    <a class="vine" href="#">
+                      <i class="fab fa-vine"></i>
+                      <i class="fab fa-vine"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3 res-margin">
+                <!-- Footer Items -->
+                <div class="footer-items">
+                  <!-- Footer Title -->
+                  <h4 class="footer-title">Useful Links</h4>
+                  <ul>
+                    <li><a href="#">All NFTs</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">Create</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Privacy &amp; Terms</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3 res-margin">
+                <!-- Footer Items -->
+                <div class="footer-items">
+                  <!-- Footer Title -->
+                  <h4 class="footer-title">Community</h4>
+                  <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Suggestions</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <!-- Footer Items -->
+                <div class="footer-items">
+                  <!-- Footer Title -->
+                  <h4 class="footer-title">Subscribe Us</h4>
+                  <!-- Subscribe Form -->
+                  <div class="subscribe-form d-flex align-items-center">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="info@yourmail.com"
+                    />
+                    <button type="submit" class="btn">
+                      <i class="icon-paper-plane"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <!-- Copyright Area -->
+                <div
+                  class="copyright-area d-flex flex-wrap justify-content-center justify-content-sm-between text-center py-4"
+                >
+                  <!-- Copyright Left -->
+                  <div class="copyright-left">
+                    &copy;2022 CryptoR All Rights Reserved
+                  </div>
+                  <!-- Copyright Right -->
+                  <div class="copyright-right">
+                    Made with <i class="fas fa-heart"></i> By
+                    <a href="#">cryptoR</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--====== Scroll To Top Area Start ======-->
+      <div id="scroll-to-top" class="scroll-to-top">
+        <a href="#header" class="smooth-anchor">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+      <!--====== Scroll To Top Area End ======-->
+    </div>
+    <!-- ***** All jQuery Plugins ***** -->
+
+    <!-- jQuery(necessary for all JavaScript plugins) -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap js -->
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+    <!-- Plugins js -->
+    <script src="assets/js/vendor/all.min.js"></script>
+    <script src="assets/js/vendor/slider.min.js"></script>
+    <script src="assets/js/vendor/countdown.min.js"></script>
+    <script src="assets/js/vendor/shuffle.min.js"></script>
+
+    <!-- Active js -->
+    <script src="assets/js/main.js"></script>
+  </body>
+  <script src="assets/js/learn.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/js.cookie.js"></script>
+  <script src="assets/js/connectWallet.js"></script>
+  <script src="assets/js/profile.js"></script>
+</html>

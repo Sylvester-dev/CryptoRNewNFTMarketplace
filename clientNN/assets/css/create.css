@@ -1,0 +1,46 @@
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 180px;
+}
+
+header{
+  margin-top: 50px;
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.subheader{
+  color: #666;
+}
+
+.button-wrapper{
+ text-align: center;
+ border: 1px solid #ddd;
+ padding: 15px;
+ border-radius: 15px;
+}
+
+#singleButton{
+  border-radius: 15px;
+}
+
+button{
+  background: none;
+}
+
+img{
+  max-height: 220px;
+}
+
+@media (max-width: 370px) { /*for sm mobile */
+  img{
+    max-height: 180px;
+  }
+}
+
+.type{
+  padding-top: 15px;
+  font-weight: 600;
+}

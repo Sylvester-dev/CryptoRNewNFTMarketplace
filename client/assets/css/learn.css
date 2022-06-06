@@ -1,0 +1,39 @@
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header{
+  margin-top: 50px;
+  font-size: 70px;
+}
+
+.subheader{
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+ul{
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+.card-body{
+  line-height: 2.2;
+  font-weight: 500;
+}
+
+.btn-link{
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+#createInQ2{
+  background: -webkit-linear-gradient(260deg, rgb(249, 50, 0) 0%, rgba(251, 63, 63, 0.979) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

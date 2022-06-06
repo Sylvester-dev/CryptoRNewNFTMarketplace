@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style_home.css">
+    <link rel="stylesheet" href="assets/css/card.css">
+    <link rel="stylesheet" href="assets/css/token.css">
+    <link rel="icon" type="image/png" href="assets/images-icons/CryptoRLogo.png">
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.6/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis@0.0.184/dist/moralis.js"></script>
+    <script src="https://kit.fontawesome.com/99c803f139.js" crossorigin="anonymous"></script>
+    <script src="assets/js/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <title>CryptoR - Create, buy, and sell digital artwork</title>
+  </head>
+  
+    
+      <header id="header">
+        <nav
+          data-aos="zoom-out"
+          data-aos-delay="800"
+          class="navbar navbar-expand"
+        >
+          <div class="container header">
+            <a class="navbar-brand" href="index.html">
+              <img
+                class="navbar-brand-sticky"
+                src="assets/images-icons/CryptoRLogo.png"
+                alt="CryptoR logo"
+              />
+            </a>
+            <div class="ml-auto"></div>
+            <!-- Navbar -->
+  
+            <ul class="navbar-nav items mx-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="following.html" class="nav-link">Following</a>
+              </li>
+              <li class="nav-item">
+                <a href="academy.html" class="nav-link">Academy</a>
+              </li>
+              <li class="nav-item">
+                <a href="create.html" id="create" class="nav-link">Create</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#"
+                  >Explore <i class="fas fa-angle-down ml-1"></i
+                ></a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="stats.html" class="nav-link">My stats</a>
+                  </li>
+                  <li class="nav-item" id="myProfile">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="edit-profile.html" class="nav-link"
+                      >Edit Profile</a
+                    >
+                  </li>
+                  <li class="nav-item" id="disconnectWalletBtn">
+                    <a class="nav-link">Disconnect wallet</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">Contact</a>
+              </li>
+              <!-- Navbar Action Button -->
+              <ul class="navbar-nav action">
+                <li class="nav-item ml-3" id="connectWalletTag">
+                  <button
+                    type="button"
+                    href="wallet-connect.html"
+                    class="btn ml-lg-auto btn-bordered-white"
+                    id="connectWalletBtn"
+                  >
+                    <i class="icon-wallet mr-md-2"></i>Wallet Connect
+                  </button>
+                </li>
+              </ul>
+            </ul>
+          </div>
+        </nav>
+      </header>
+  
+<!-- ***** Breadcrumb Area Start ***** -->
+<section class="breadcrumb-area overlay-dark d-flex align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <!-- Breamcrumb Content -->
+        <div class="breadcrumb-content text-center">
+          <h2 class="m-0">Item details</h2>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html">Minted</a></li>
+            <li class="breadcrumb-item active">Item</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ***** Breadcrumb Area End ***** -->
+    <div class="container-fluid">
+
+      <div id="ifWalletNotConnectedModal" class="modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header center-content">
+              <h5 class="modal-title">Must Connect Wallet To Continue</h5>
+            </div>
+            <div class="modal-body center-content">
+              <button type="button" class="btn btn-secondary button-styling mr-2" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary button-styling" id="connectWalletModalBtn">Connect Wallet</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="additionalInfoModal" class="modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Additional Info</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="addtionalInfoModalBody">
+               <p id="additionalInfoText"></p>
+               <textarea id="additionalInfoInput" type="text" class="form-control input-styling" aria-label="additional info"></textarea>
+             </div>
+             <div class="modal-footer">
+               <span id="status"></span>
+               <button type="button" class="btn btn-secondary button-styling" data-dismiss="modal">Close</button>
+               <button type="button" class="btn btn-primary button-styling" id="editAdditionalInfo">Edit</button>
+               <button type="button" class="btn btn-primary button-styling" id="saveAdditionalInfo">Save</button>
+             </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="unlockableContentModal" class="modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id='contentUnlockedTitle'>Content Unlocked</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="unlockableContentModalBody">
+              <p id="unlockableContentText"></p>
+            </div>
+            <div class="modal-footer" id='unlockableFooter'>
+               <span id="copyStatus"></span>
+               <button type="button" class="btn btn-secondary button-styling" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modals"></div>
+
+      <div class="cardDiv row">
+        <div id='loader' class="spinner-border mt-5 text-primary" style="width: 3rem; height: 3rem;" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      </div>
+    </div>
+   
+<!-- ***** All jQuery Plugins ***** -->
+
+    <!-- jQuery(necessary for all JavaScript plugins) -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap js -->
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+    <!-- Plugins js -->
+    <script src="assets/js/vendor/all.min.js"></script>
+    <script src="assets/js/vendor/slider.min.js"></script>
+    <script src="assets/js/vendor/countdown.min.js"></script>
+    <script src="assets/js/vendor/shuffle.min.js"></script>
+
+    <!-- Active js -->
+    <script src="assets/js/main.js"></script>
+  </body>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/js.cookie.js"></script>
+  <script src="assets/js/connectWallet.js"></script>
+  <script src="assets/js/token.js"></script>
+  <script src="assets/js/abi.js"></script>
+  <script src="assets/js/profile.js"></script>
+</html>

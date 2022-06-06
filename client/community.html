@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/learn.css">
+    <link rel="stylesheet" href="assets/css/basics.css">
+    <link rel="icon" type="image/png" href="assets/images-icons/CryptoRLogo.png">
+    <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+    <script src="assets/bootstrap/js/popper.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis@0.0.184/dist/moralis.js"></script>
+    <script src="https://kit.fontawesome.com/99c803f139.js" crossorigin="anonymous"></script>
+    <title>CryptoR - Create, buy, and sell digital artwork backed by Avalanche blockchain technology</title>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/images-icons/CryptoRLogoBeta.png" width="176" height="36" class="d-inline-block align-top" alt="CryptoR logo">
+      </a>
+      <span class="input-group searchbar">
+        <span id="exitSearchBtn">
+          <span class="exit-search">⬅️</span>
+        </span>
+        <input type="search" id="searchInput" class="form-control search-input" placeholder="Search by Creator, Artwork Title, or Wallet Address" aria-label="Search by creator, artwork title, or wallet address">
+      </span>
+      <button class="btn search-button" id="searchBtn">🔍</button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="following.html">Following</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="community.html">Guidelines<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="create" href="create.html">CREATE</a>
+          </li>
+          <li class="nav-item mr-1" id="connectWalletTag">
+            <button type="button" class="btn btn-primary button-styling shadow-sm" id="connectWalletBtn">Connect</button>
+          </li>
+          <li class="nav-item dropdown mr-2" id="profileTag" style="display: none;">
+            <a class="nav-link dropdown-toggle shadow-sm" href="#" id="profile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span id="userAddress"></span>
+              <span id="spinnerBorderInNav" class="spinner-border text-primary" style="margin: 0 5px; width: 1.25rem; height: 1.25rem;" role="status">
+                <span class="sr-only">Loading...</span>
+              </span>
+              <img src="" class="shadow-sm" id="profilePhotoInNav" width="30px">
+              <img id="rankInNav" src="" width="12px" alt="seller badge">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="profile">
+              <a class='dropdown-item' href="stats.html">My Stats</a>
+              <a id="myProfile" class='dropdown-item' href="profile.html">My Profile</a>
+              
+              <a class='dropdown-item' href="edit-profile.html">Make/Edit Profile</a>
+              <hr>
+              <a class="dropdown-item" id="disconnectWalletBtn">Disconnect Wallet</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-light theme" id="forDarkMode">
+              <img src="assets/images-icons/darkmode.png" width="30" height="30" alt="icon to initiate dark mode theme">
+            </button>
+            <button type="button" class="btn btn-dark theme" id="forLightMode">
+              <img src="assets/images-icons/lightmode.png" width="30" height="30" alt="icon to initiate light mode theme">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="community-page">
+        <header>
+          <img src="assets/images-icons/CryptoRLogo.png" width="100" height="100" alt="icon to initiate light mode theme">
+          Crypto<span id="mint">R</span>
+          <p class="subheader">CryptoRNFT.Com’s NFT Marketplace Community Guidelines</p>
+        </header>
+        <div class="accordion" id="Community">
+          
+          <p style="position: relative;">(Updated as of 15th February, 2022)</p>
+
+          <h2>INTRODUCTION
+          </h2>
+
+          <p>This is an endeavour from CryptoRNFT.Com to build a strong community that can inspire, stimulate and empower creators as well as collectors. NFT is a new phenomenon and hence it is to be nurtured carefully for its growth and development. This growth is to be achieved by creating a beautiful NFT ecosystem that respects all who are associated with NFTs. These could be, of course, the creators of NFTs who are manifesting their brilliance before the world, or these could be the collectors who are appreciating and supporting such fine illustrations and taking a call to purchase the same. We have introduced a third angle to it by involving experts to rate NFTs being listed on our marketplace. This will help and support buyers in taking their decisions to buy NFTs.<br><br>
+          </p>
+
+          <h2>COMMUNITY</h2>
+          <p>
+            CryptoRNFT.Com has developed a Telegram channel and Twitter channel  xxxxxxxxxxxxx which will be the binding force between the creators, collectors and rating experts. Here, all three can interact with each other and can share their work and experience to develop and grow the community. This community will preserve the tradition and will pave way for innovation and expansion. Community members will have mutual respect and regard for each other. Anyone who is serious to contribute in the domain of non-fungible token in any way can be part of this community.<br><br>
+          </p>
+
+          <h2>CREATORS
+</h2>
+<p>Creators are a very important link in this chain of creating and selling of NFTs. They create and generate NFTs, and put it for the display before the audience. Audience enjoys their skills and appreciates their artful manifestations. Those who fall in love with a piece of art become buyer of that NFT. We endorse that creators should be given freedom to express their creativity so that their ideas come out without any restriction and binding. They can rightfully express their vision before the audience. At the same time, creators must understand that everything comes at a cost and their freedom to creativity is no exception. Creators have to ensure that-<br><br>
+  
+  A) They do not upload somebody else’s copyrighted work or proprietary work, <br>
+  B) They present beautiful work for the audience and their work should comprise of quality work,<br>
+  C) They avoid duplicating their work to maintain the uniqueness of the work. However, work representing a series or variation is acceptable,<br>
+  D) Their work should not spread hatred and violence against anyone or any group. The purpose of art is to spread the message of love and peace. Hence, their work should imbibe this spirit and should not present anything that could be against a community, religion, nation, society, ethnicity and culture, <br>
+  E) They do not present anything which could be illegal, illegitimate, fraudulent, criminal or anything against the law of the land,   <br>
+  F) There should not be any display or promotion of any pornographic and/or sexually explicit material and/or content, and<br>
+  G) They do not endorse, promote and glorify any activity that is self-harming and suicidal in nature.<br><br>
+  We believe that creators’ community is highly responsible community and is aware of its duties and commitments as a creator.<br><br>
+  Creators retain and maintain all legal rights, including copyrights and trademarks of their original work. They can reproduce, distribute, exhibit and make derivative work of their piece of work on CryptoRNFT.Com marketplace.<br><br>
+</p>  
+          <h2>COLLECTORS</h2>
+        <p>  An artist’s work is incomplete unless there is a collector for that work. Collectors are those important links in the chain where the art culminates. Collectors appreciate arts and their creators and as a mark of respect decide to invest in that piece of art. This way they support, promote and help their favourite artist and artwork. Anyone who is engaged in buying, purchasing, selling, re-selling, exchanging and possessing the artwork is a collector. Artists on the NFT marketplace are revolutionising the arts industry and collectors are the flag bearers of this revolution.<br><br>
+          As a collector you own your rights on the NFT that you have bought. The NFT is available on the blockchain and you can display, share, trade and resell that piece of NFT as per your wish and choice in the secondary market.<br><br>
+          However, you must remember that you cannot claim copyrights, trademarks, or other intellectual property rights as a collector unless specifically mentioned by the Creator.<br><br>
+          We want those collectors in our community who have an eye for detail and who can truly value and cherish any piece of work. It totally depends on collectors’ community how they shape up the marketplace by their presence and contribution to this new form of art.<br><br>        
+        </p>
+          <h2>CryptoR.Com
+          </h2>
+            <p>
+              We as a service provider create a space for this community to interact with each other and get benefitted and enriched with the knowledge, skills, expertise and experience of each other. From time to time, based on industry trends, we may guide our rating experts, creators and collectors about the latest development on NFT front and will try to make this interaction healthy and fruitful.<br><br>
+            </p>
+            <h2>SAFE AND RESPECTFUL ENVIRONMENT
+            </h2>
+            <p>All of us together hold the responsibility to provide a safe and positive environment to this community by respecting each other’s views. This community should be inclusive and democratic. It should ensure fair participation from every member who is willing to contribute to the community. You are requested to bring it to our knowledge if any member of the community violates the spirit of the community by violating the directions that have been laid down here. As a service provider, we will intervene and will take necessary action against that member including his/her suspension and blocking of his/her account.<br><br>
+              However, we are confident that community members will maintain decorum and will behave with maturity here.<br>
+            </p>
+            
+    <footer>
+      <div class="footer-content">
+        <div class="social-media-icons">
+          <a class="icon" href="https://twitter.com/CryptoRBharat"><i class="fab fa-twitter"></i></a>
+          <a class="icon" href="https://www.facebook.com/CryptoRBharat"><i class="fab fa-instagram"></i></a>
+          <a class="icon" href="https://www.youtube.com/channel/cryptorbharat"><i class="fab fa-youtube"></i></a>
+          <a class="icon" href="https://discord.gg/h2aFpgHD"><i class="fab fa-discord"></i></a>
+        </div>
+
+          <div class="links">
+          <a href="https://www.linkedin.com/company/crypto-r">LinkedIn</a>
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="community.html">Community Guidelines</a>
+          <a href="learn.html">FAQs</a>
+        </div>
+
+
+        <div class="company-name">
+          
+          <span>© 2022 Crypto<span id="mint">R</span> All Rights Reserved</span>
+        </div>
+
+      </div>
+    </footer>
+  </body>
+  <script src="assets/js/learn.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/js.cookie.js"></script>
+  <script src="assets/js/connectWallet.js"></script>
+  <script src="assets/js/profile.js"></script>
+
+</html>
