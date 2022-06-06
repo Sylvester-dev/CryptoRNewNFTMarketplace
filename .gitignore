@@ -5,7 +5,7 @@ coverage.json
 typechain
 data
 secret.json
+clientNN
 #Hardhat files
 cache
 artifacts
-clientNN
