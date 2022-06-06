@@ -1,0 +1,70 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\asus\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\Python310\Scripts\;C:\Python310\;D:\APP\Python\Scripts\;D:\APP\Python\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\MinGW\bin;D:\APP\R\rtools40\\usr\bin\;C:\Program Files\Java\jdk-13.0.1;C:\Program Files\Git\cmd;D:\APP\Matlab app\runtime\win64;D:\APP\Matlab app\bin;D:\APP\Matlab app\polyspace\bin;C:\ProgramData\chocolatey\bin;C:\Users\asus\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\asus\.windows-build-tools\python27\;C:\Program Files\Java\jdk-13.0.1\bin;C:\Users\asus\AppData\Local\Microsoft\WindowsApps;C:\Users\asus\AppData\Local\Programs\Microsoft VS Code\bin;C:\MinGW\bin;C:\src\flutter\flutter\bin;C:\Users\asus\AppData\Local\atom\bin;C:\Users\asus\AppData\Local\hyper\app-3.0.2\resources\bin;C:\Program Files\heroku\bin;D:\APP\Pycharm\PyCharm Community Edition 2020.1.4\bin;C:\Users\asus\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MongoDB\Server\4.4\bin;C:\Program Files\MongoDB\Server\4.2\bin;C:\MinGW\mingw32\bin;D:\APP\R\rtools40\\usr\bin\;D:\APP\heroku\bin;D:\APP\IPFS\IPFS Desktop\resources\app.asar.unpacked\src\ipfs-on-path\scripts\bin-win;D:\APP\platform-tools;D:\APP\Pycharm\PyCharm Community Edition 2021.1.2\bin;;C:\Users\asus\AppData\Local\GitHubDesktop\bin;C:\Users\asus\AppData\Roaming\npm;C:\Users\asus\AppData\Roaming\nvm;C:\Program Files\nodejs
+
+Yarn version: 
+  1.22.11
+
+Node version: 
+  16.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: D:\Blockchain\WORK\CryptoRNewNFTMarketplace\package.json: Unexpected token } in JSON at position 497
+      at JSON.parse (<anonymous>)
+      at C:\Users\asus\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\asus\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\asus\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "hardhat-project",
+    "devDependencies": {
+      "@nomiclabs/hardhat-ethers": "^2.0.6",
+      "@nomiclabs/hardhat-waffle": "^2.0.3",
+      "@openzeppelin/hardhat-upgrades": "^1.17.0",
+      "chai": "^4.3.6",
+      "ethereum-waffle": "^3.4.4",
+      "ethers": "^5.6.8",
+      "moralis": "^0.0.184",
+      "webpack": "^5.64.3",
+      "canvas-confetti": "^1.4.0"
+    },
+    "dependencies": {
+      "@openzeppelin/contracts": "^4.6.0",
+      "@openzeppelin/contracts-upgradeable": "^4.0.0",
+      "build": "^0.1.4",
+    },
+    "description": "This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.",
+    "version": "1.0.0",
+    "main": "cloudFunction.js",
+    "directories": {
+      "test": "test"
+    },
+    "scripts": {
+      "test": "mocha",
+      "build": "echo 'build script executed'"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Sylvester-dev/CryptoRNewNFTMarketplace.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Sylvester-dev/CryptoRNewNFTMarketplace/issues"
+    },
+    "homepage": "https://github.com/Sylvester-dev/CryptoRNewNFTMarketplace#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
