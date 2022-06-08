@@ -14,17 +14,17 @@ let web3;
 let ethPrice;
 let usd;
 
-$(document).ready(async function(){
-  web3 = await Moralis.enableWeb3();
-  CryptoRTokenInstance = new web3.eth.Contract(abi.CryptoRToken, CryptoRTokenAddress);
-  CryptoRMarketplaceInstance = new web3.eth.Contract(abi.CryptoRMarketplace, CryptoRMarketplaceAddress);
-  ethPrice = await getEthPrice();
-  recentlySold();
-  viewAll();
-  allCount();
-  forSaleCount();
-  notForSaleCount();
-});
+// $(document).ready(async function(){
+//   web3 = await Moralis.enableWeb3();
+//   CryptoRTokenInstance = new web3.eth.Contract(abi.CryptoRToken, CryptoRTokenAddress);
+//   CryptoRMarketplaceInstance = new web3.eth.Contract(abi.CryptoRMarketplace, CryptoRMarketplaceAddress);
+//   ethPrice = await getEthPrice();
+//   recentlySold();
+//   viewAll();
+//   allCount();
+//   forSaleCount();
+//   notForSaleCount();
+// });
 
 function removeDuplicates(data, key){
   return [
@@ -122,6 +122,8 @@ $('#viewAll').click(()=>{
   loader();
   viewAll();
 });
+
+viewAll();
 
 async function viewAll(){
   let ifOfferDetails = await Moralis.Cloud.run("getOfferDetails");

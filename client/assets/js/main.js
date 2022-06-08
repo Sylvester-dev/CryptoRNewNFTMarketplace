@@ -149,7 +149,7 @@
 
     $('.nav-link').each(function() {
         let href = $(this).attr('href');
-        if (href.length > 1 && href.indexOf('#') != -1) {
+        if ((href?href:'').length > 1 && href.indexOf('#') != -1) {
             $(this).addClass('smooth-anchor');
         }
     })

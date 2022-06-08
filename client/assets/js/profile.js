@@ -1,7 +1,6 @@
+serverUrl = "https://zfaxtniyopd8.usemoralis.com:2053/server";
 appId = "39SwxbGndvVurm6YgCbpaFTvjdu4fcEv3bhGFbL1";
-serverUrl = 'https://zfaxtniyopd8.usemoralis.com:2053/server';
 Moralis.start({ serverUrl, appId });
-
 const BASE_URL = "https://api.coingecko.com/api/v3";
 const ETH_USD_PRICE_URL = "/simple/price?ids=ethereum&vs_currencies=usd";
 const CryptoRTokenAddress = "0xe2E68E26fbf53B9B416878db4Bb2f88E3182B574";
@@ -16,12 +15,14 @@ const url_string = (window.location.href).toLowerCase();
 let url = new URL(url_string);
 let address = url.searchParams.get('address');
 
+
 $(document).ready(async function(){
   web3 = await Moralis.enableWeb3();
   CryptoRTokenInstance = new web3.eth.Contract(abi.CryptoRToken, CryptoRTokenAddress);
   CryptoRMarketplaceInstance = new web3.eth.Contract(abi.CryptoRMarketplace, CryptoRMarketplaceAddress);
   paymentGatewayInstance = new web3.eth.Contract(abi.PaymentGateway, paymentGatewayAddress);
   ifAddressNotInDatabase(address);
+  isUserIn();
   ethPrice = await getEthPrice();
   getActiveOwnedArt();
   getInactiveOwnedArt();
@@ -48,6 +49,14 @@ async function ifAddressNotInDatabase(address){
   }
 };
 
+function isUserIn() {
+  if (!user) {
+    $(".profile").html(
+      '<p class="center-content not-connected-text">Please connect wallet to view your profile</p>'
+    );
+  }
+}
+
 async function getForSaleCount(){
   let ifOfferDetails = await Moralis.Cloud.run("getOfferDetails");
   let ifOfferDetailsDuplicatesRemoved = removeDuplicates(ifOfferDetails, it => it.tokenId);
@@ -58,17 +67,17 @@ async function getForSaleCount(){
 
 async function getOwnsCount(){
   let artwork = await Moralis.Cloud.run('getArtwork');
-  const count = artwork.filter(item => item.currentOwner.toLowerCase() == address.toLowerCase()).length;
+  const count = artwork.filter(item => item.currentOwner == address).length;
   $('#ownsCount').html(count);
   if(count == 0){
-    $('.cardDivs').html(`<div class="list-group"><span class="sub-text mt-5">No artwork currently owned</span></div>`);
+    $('.cardDivs').html(`<div><span class="sub-text mt-5">No artwork currently owned</span></div>`);
   }
   return count;
 };
 
 async function getMintedCount(){
   let artwork = await Moralis.Cloud.run('getArtwork');
-  const count = artwork.filter(item => item.creator.toLowerCase() == address.toLowerCase()).length;
+  const count = artwork.filter(item => item.creator == address).length;
   $('#mintedCount').html(count);
   return count;
 
@@ -144,6 +153,7 @@ async function getEthPrice(){
 };
 
 function displayProfilePhotoAndBadge(profilePhoto, amountSold){
+  console.log("I am called for dp");
   if(profilePhoto){
     addSellerBadgeProfile(amountSold);
   $('#profilePhoto').attr('src', profilePhoto._url);
@@ -430,7 +440,7 @@ async function getMyBalance(){
 };
 
 async function withdrawBtn(){
-  if(!user || user.attributes.ethAddress.toLowerCase() !== address.toLowerCase()){
+  if(!user || user.attributes.ethAddress !== address){
     $('#withdraw').css('display', 'none');
   } else{
     let profit = await getMyBalance();
@@ -451,7 +461,7 @@ $("#withdraw").click(async function(){
 
 $('#confirmBtn').click(async ()=>{
   let profit = await getMyBalance();
-  if(user.attributes.ethAddress.toLowerCase() == address.toLowerCase() && profit > 0){
+  if(user.attributes.ethAddress == address && profit > 0){
     $('#withdrawStatus').html('');
     withdrawProfits();
   }
@@ -496,7 +506,7 @@ $('#forSale').click(async()=>{
   loader();
   let count = await getForSaleCount();
   if(count == 0){
-    $('.cardDivs').html(`<div class="list-group"><span class="sub-text mt-5">No artwork for sale currently</span></div>`);
+    $('.cardDivs').html(`<div><span class="sub-text mt-5">No artwork for sale currently</span></div>`);
   } else {
     getActiveOwnedArt();
   }
@@ -507,7 +517,7 @@ $('#owns').click(async()=>{
   loader();
   let count = await getOwnsCount();
   if(count == 0){
-    $('.cardDivs').html(`<div class="list-group"><span class="sub-text mt-5">No artwork currently owned</span></div>`);
+    $('.cardDivs').html(`<div><span class="sub-text mt-5">No artwork currently owned</span></div>`);
   } else {
     getActiveOwnedArt();
     getInactiveOwnedArt();
@@ -519,7 +529,7 @@ $('#minted').click(async ()=>{
   loader();
   let count = await getMintedCount();
   if(count == 0){
-    $('.cardDivs').html(`<div class="list-group"><span class="sub-text mt-5">No artwork minted yet</span></div>`);
+    $('.cardDivs').html(`<div><span class="sub-text mt-5">No artwork minted yet</span></div>`);
   } else {
     getInactiveMintedArt();
     getActiveMintedArt();
@@ -531,7 +541,7 @@ $('#liked').click(async ()=>{
   loader();
   let count = await getLikedCount();
   if(count == 0){
-    $('.cardDivs').html(`<div class="list-group"><span class="sub-text mt-5">No artwork liked yet</span></div>`);
+    $('.cardDivs').html(`<div><span class="sub-text mt-5">No artwork liked yet</span></div>`);
   } else {
     getActiveLikedArt();
     getInactiveLikedArt();
@@ -543,7 +553,7 @@ $('#encouraged').click(async ()=>{
   loader();
   let count = await getEncouragedCount();
   if(count == 0){
-    $('.cardDivs').html(`<div class="list-group"><span class="sub-text mt-5">No artwork encouraged currently</span></div>`);
+    $('.cardDivs').html(`<div><span class="sub-text mt-5">No artwork encouraged currently</span></div>`);
   } else {
     getEncouragedArt();
   }
@@ -778,7 +788,7 @@ async function getInactiveOwnedArt(){
   try{
     let artwork = await Moralis.Cloud.run('getArtwork');
     for (i = 0; i < artwork.length; i++) {
-      if(artwork[i].currentOwner.toLowerCase() == address.toLowerCase() && artwork[i].active == false){
+      if(artwork[i].currentOwner == address && artwork[i].active == false){
         let cover = artwork[i].cover._url;
         let tokenAddress = artwork[i].tokenAddress;
         let id = artwork[i].tokenId;
@@ -1262,8 +1272,10 @@ async function getProfileDetails(){
   try{
     let userDetails = await Moralis.Cloud.run('getUser');
     for (i = 0; i < userDetails.length; i++) {
+      console.log("I am inside")
       if(userDetails[i].ethAddress.toLowerCase() == toAddress.toLowerCase()){
-        let profilePhoto = userDetails[i].profilePhoto;
+        console.log("I am inside")
+        let profilePhoto = userDetails[i].attributes.profilePhoto._url;
         let username = userDetails[i].username;
         let ethAddress = userDetails[i].ethAddress;
         let bio = userDetails[i].bio;
@@ -1731,6 +1743,7 @@ async function newOwnerPhotoQuery(tokenAddress, id, toAddress){
     for (i = 0; i < users.length; i++) {
       if(users[i].ethAddress.toLowerCase() == toAddress.toLowerCase()){
         let profilePhoto = users[i].profilePhoto;
+        console.log(profilePhoto);
         let amountSold = users[i].amountSold;
         if(profilePhoto){
           addSellerBadge(tokenAddress, id, amountSold);

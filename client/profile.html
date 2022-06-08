@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/profile.css">
     <link rel="stylesheet" href="assets/css/card.css">
+    
    
     <link rel="icon" type="image/png" href="assets/images-icons/CryptoRLogo.png">
     <script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
@@ -20,7 +21,7 @@
     <script src="https://kit.fontawesome.com/99c803f139.js" crossorigin="anonymous"></script>
     <script src="assets/js/clipboard.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
-    <title>CryptoR - Create, buy, and sell digital artwork backed by Avalanche blockchain technology</title>
+    <title>CryptoR - Create, buy, and sell digital artwork</title>
   </head>
   <body>
     <div class="main">
@@ -114,17 +115,34 @@
             </div>
           </section>
           <!-- ***** Breadcrumb Area End ***** -->
-
+          <!-- <div class="profile-picture">
+            <span class="text-light" style="width: 120px; height: 120px;" role="status">
+              <img style="border-radius: 100px;" src="./assets/images-icons/default.png" width="120" alt="profile photo">
+            </span>
+            
+            <div class="seller-badge">
+              <img id="sellerRank" src="" width="32" alt="seller rank badge">
+            </div>
+          </div> -->
     <div class="container-fluid col-11">
       <div class="profile profileGenerated">
         <div class="modals"></div>
 
         <div class="profile-top-half">
-          <div class="profile-picture">
+          <!-- <div class="profile-picture">
             <span id="spinnerGrowProfilePhoto" class="spinner-grow text-light" style="width: 120px; height: 120px;" role="status">
               <span class="sr-only">Loading...</span>
             </span>
-            <img class="profile-photo shadow-sm" src="../client/assets/images-icons/default.png" width="120" alt="profile photo">
+            <img class="profile-photo shadow-sm" id="profilePhoto" src="" width="120" alt="profile photo">
+            <div class="seller-badge">
+              <img id="sellerRank" src="" width="32" alt="seller rank badge">
+            </div>
+          </div> -->
+          <div class="profile-picture">
+            <span class="text-light" style="width: 120px; height: 120px;" role="status">
+              <img style="border-radius: 100px;" src="./assets/images-icons/default.png" width="120" alt="profile photo">
+            </span>
+            
             <div class="seller-badge">
               <img id="sellerRank" src="" width="32" alt="seller rank badge">
             </div>
@@ -408,12 +426,10 @@
     <!-- Active js -->
     <script src="assets/js/main.js"></script>
   </body>
+  <script src="assets/js/profile.js"></script>
   <script src="assets/js/js.cookie.js"></script>
   <script src="assets/js/nav.js"></script>
-  <script src="assets/js/profile.js"></script>
   <script src="assets/js/abi.js"></script>
   <script src="assets/js/connectWallet.js"></script>
   <script src="assets/js/theme.js"></script>
-  <script src="assets/js/profile.js"></script>
-
 </html>
