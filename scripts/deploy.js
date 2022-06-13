@@ -21,7 +21,7 @@ async function main() {
   
   //3.
   const CryptoRMarketplace = await hre.ethers.getContractFactory("CryptoRMarketplace");
-  const cryptoRMarketplace = await CryptoRMarketplace.deploy(cryptoR.address,paymentGateway.address,"0xC2Aa1cEa55983c551609445b1221CAa56FDa2503");
+  const cryptoRMarketplace = await CryptoRMarketplace.deploy(cryptoR.address,paymentGateway.address,"0xef27136A30907107b2fcC6B3a066351565b5e3f4");
 
   await cryptoRMarketplace.deployed();
 
