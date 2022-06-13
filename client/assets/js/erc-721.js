@@ -3,8 +3,8 @@ appId = "nEQ0TYZEk339jLD5EW0aPy8kmZ5kcLyagm37YEkJ";
 Moralis.start({ serverUrl, appId });
 
 const user = Moralis.User.current();
-const CryptoRTokenAddress = "0xe2E68E26fbf53B9B416878db4Bb2f88E3182B574";
-const CryptoRMarketplaceAddress = "0x76E39992697a70e152f7196fE228F9cCF5cC5d83";
+const CryptoRTokenAddress = "0xa8186485BDFf4C9b02B12A0d566A71585f530ca5";
+const CryptoRMarketplaceAddress = "0x8854Df6d69eF2B5E4d2BFDFbC0792294e90283B6";
 let CryptoRTokenInstance;
 let CryptoRMarketplaceInstance;
 let web3;
