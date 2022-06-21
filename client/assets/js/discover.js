@@ -14,7 +14,7 @@ let web3;
 let ethPrice;
 let usd;
 
-// $(document).ready(async function(){
+// (async() => {
 //   web3 = await Moralis.enableWeb3();
 //   CryptoRTokenInstance = new web3.eth.Contract(abi.CryptoRToken, CryptoRTokenAddress);
 //   CryptoRMarketplaceInstance = new web3.eth.Contract(abi.CryptoRMarketplace, CryptoRMarketplaceAddress);
@@ -24,7 +24,7 @@ let usd;
 //   allCount();
 //   forSaleCount();
 //   notForSaleCount();
-// });
+// })();
 
 function removeDuplicates(data, key){
   return [
@@ -70,6 +70,15 @@ $('#connectWalletModalBtn').click(async () =>{
     let currentUser = await Moralis.Web3.authenticate();
     if(currentUser){
       location.reload();
+      web3 = await Moralis.enableWeb3();
+      CryptoRTokenInstance = new web3.eth.Contract(abi.CryptoRToken, CryptoRTokenAddress);
+      CryptoRMarketplaceInstance = new web3.eth.Contract(abi.CryptoRMarketplace, CryptoRMarketplaceAddress);
+      ethPrice = await getEthPrice();
+      recentlySold();
+      viewAll();
+      allCount();
+      forSaleCount();
+      notForSaleCount();
     }
   } catch (error) {
     alert(error.message);

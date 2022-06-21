@@ -232,7 +232,7 @@ $('#salePriceInput').keyup(() =>{
   let price = $('#salePriceInput').val();
 
   let profit = price - (price * .02);
-  $('#saleProfit').html(`${profit} BNB`);
+  $('#saleProfit').html(`${profit} ETH`);
   let usdProfit = (profit * ethPrice).toFixed(2);
   $('#usdProfit').html(`$${usdProfit}`);
 
