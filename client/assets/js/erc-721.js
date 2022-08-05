@@ -209,7 +209,7 @@ $('#onSaleSwitch').click(() =>{
     $('#setOffer').css('display', 'block');
     $('#salePriceInput').prop('required', true);
     checkIfApproved();
-    $("#createButton").prop('disabled', true);
+    $("#createButton").prop('disabled', false);
   } else{
     console.log('not going on sale');
     $('#priceInputGroup').css('display', 'none');
@@ -232,7 +232,7 @@ $('#salePriceInput').keyup(() =>{
   let price = $('#salePriceInput').val();
 
   let profit = price - (price * .02);
-  $('#saleProfit').html(`${profit} ETH`);
+  $('#saleProfit').html(`${profit} AVAX`);
   let usdProfit = (profit * ethPrice).toFixed(2);
   $('#usdProfit').html(`$${usdProfit}`);
 
@@ -269,7 +269,7 @@ $('#royaltySlider').change(()=>{
 $("form").on('submit',function(e){
   e.preventDefault();
   //disabling prevents accidental last minute changes that can mess up upload
-  $('#onSaleSwitch').prop('disabled', true);
+  // $('#onSaleSwitch').prop('disabled', true);
 
   if(nft && cover){
     $('#createModal').modal('show');
@@ -453,6 +453,7 @@ function setArtForSale(tokenId){
                           </div>`);
     try{
       await CryptoRMarketplaceInstance.methods.setOffer(amountInWei, tokenId, CryptoRTokenAddress).send({from: user.attributes.ethAddress});
+      console.log("Getting on sale at erc721")
       $('#setOffer').html('Successfully Put On Sale');
       $('#setOffer').removeClass('btn-primary');
       $('#setOffer').addClass('btn-success');
